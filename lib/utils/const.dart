@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 /////
 bool loggedIn = false;
 
-
 var kdarkOrange = Color(0xFFa31300);
-var kPrimary = Color(0xFFff8119);
+var kPrimary = Color(0xFF03645D);
+var kBgColor = Color(0xFFFFFFFF);
 var kthirdColor = Color(0xFF33424d);
-
-var kSecondaryColor = Color(0xFFAA674A);
+var khomeTitle = TextStyle(
+    color: Colors.black87.withOpacity(0.7),
+    fontWeight: FontWeight.bold,
+    fontSize: 15.5,
+    letterSpacing: 0.25);
+var kSecondaryColor = Color(0xFFFCC8C9);
 // const kBgColor = Color(0xFFF7F9F9);
 var kAppBackgroundColor = Color(0xFFF1F1F1);
 const kGrey = Color(0xFF808080);
