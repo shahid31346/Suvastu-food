@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/firebase_options.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/get_started_screen.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: GetStartedScreen(),
     );
   }
 }
