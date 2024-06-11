@@ -233,470 +233,391 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       )
-                    : Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            TopCategory(),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TopCategory(),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                            Text(
-                              'asdsadasddsa',
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .color!,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Caveat',
-                              ),
+                          ),
+                          Text(
+                            'asdsadasddsa',
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodySmall!.color!,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Caveat',
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
               ),
             ),

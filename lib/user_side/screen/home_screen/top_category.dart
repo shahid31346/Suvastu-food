@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class TopCategory extends StatelessWidget {
@@ -18,18 +19,21 @@ class TopCategory extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Top Category
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Top Category',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'See All',
-              style: TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Top Category',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'See All',
+                style: TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
         ),
         SizedBox(height: mQ.height * 0.02),
         SizedBox(
@@ -42,19 +46,28 @@ class TopCategory extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    padding: EdgeInsets.symmetric(horizontal: 0, vertical: 8),
                     decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      border: Border.all(color: kGrey.withOpacity(0.4)),
+                      color: Colors.transparent,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Center(
                         child: Row(
                       children: [
-                        CircleAvatar(
-                          child: Image.asset(
-                            "assets/food.png",
+                        Container(
+                          height: 70,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              image: AssetImage('assets/food.png'),
+                            ),
+                            // border: Border.all(color: kGrey.withOpacity(0.4)),
                           ),
+                          // child: Image.asset('assets/food.png')
                         ),
+                        SizedBox(width: mQ.width * 0.02),
                         Text(label,
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
