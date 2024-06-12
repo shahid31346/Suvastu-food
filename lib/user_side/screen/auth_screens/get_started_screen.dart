@@ -92,7 +92,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Signup or Login",
+                      "Signup or Login".tr,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 22,
@@ -103,7 +103,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                       height: 5,
                     ),
                     Text(
-                      "Select your preferred method to Continue",
+                      "Select your preferred method to Continue".tr,
                       style: TextStyle(
                         color: Colors.black87.withOpacity(0.7),
                         fontSize: 14,
