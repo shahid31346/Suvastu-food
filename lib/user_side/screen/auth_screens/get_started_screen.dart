@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:suvastufood/global/auth_social_buttons.dart';
 import 'package:suvastufood/global/elevated_button.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -56,32 +57,32 @@ class GetStartedScreen extends StatelessWidget {
                           letterSpacing: 0.3,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 5,),
-                      Text(
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
                       "Select your preferred method to Continue",
                       style: TextStyle(
-                          color: Colors.black87.withOpacity(0.7),
-                          fontSize: 14,
-                          //letterSpacing: 0.3,
-                        ),
+                        color: Colors.black87.withOpacity(0.7),
+                        fontSize: 14,
+                        //letterSpacing: 0.3,
+                      ),
                     ),
-             
                     SizedBox(height: mQ.height * 0.04),
                     SizedBox(
                       width: mQ.width,
                       height: mQ.height * 0.065,
                       child: CustomElevatedButton(
                         onPressed: () {
-                          Get.back();
-                         // Get.toNamed(AppRoutes.emailLogin);
+                          Get.to(LoginScreen());
+                          //Get.back();
+                          // Get.toNamed(AppRoutes.emailLogin);
                         },
                         text: 'Continue with email'.tr,
-                       textColor: Colors.grey[600],
+                        textColor: Colors.grey[600],
                         iconData: FontAwesomeIcons.solidEnvelope,
                         iconColor: kPrimary,
-                       
-                        borderColor:
-                                     Colors.grey.withOpacity(0.2),
+                        borderColor: Colors.grey.withOpacity(0.2),
                       ),
                     ),
                     SizedBox(height: mQ.height * 0.02),
@@ -90,26 +91,21 @@ class GetStartedScreen extends StatelessWidget {
                       height: mQ.height * 0.065,
                       child: CustomElevatedButton(
                         onPressed: () {
-                          Get.back();
-                         
+                          // Get.back();
                         },
                         text: 'Continue with phone'.tr,
-                        textColor:
-                            Colors.grey[600],
+                        textColor: Colors.grey[600],
                         iconData: FontAwesomeIcons.mobileButton,
                         iconColor: kPrimary,
                         backgroundColor: Theme.of(context).primaryColor,
-                        borderColor:
-                           Colors.grey .withOpacity(0.2),
+                        borderColor: Colors.grey.withOpacity(0.2),
                       ),
                     ),
                     SizedBox(height: mQ.height * 0.04),
-
-                                  AuthSocialButtons(
+                    AuthSocialButtons(
                       onApplePressed: () {},
                       onGooglePressed: () {},
                     ),
-                
                   ],
                 ),
               ),
