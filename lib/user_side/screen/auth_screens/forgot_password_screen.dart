@@ -64,7 +64,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           ),
                           SizedBox(height: mQ.height * 0.015),
                           Text(
-                            "Forgot password",
+                            "Forgot password".tr,
                             style: TextStyle(
                                 color: kPrimary,
                                 fontSize: 30,
@@ -73,7 +73,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           ),
                           SizedBox(height: mQ.height * 0.005),
                           Text(
-                            "Let's get started",
+                            "Lets get started".tr,
                             style: TextStyle(
                               color: kGrey,
                               fontSize: 14,
@@ -86,12 +86,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             controller:
                                 forgotPasswordController.emailController,
                             inputType: TextInputType.emailAddress,
-                            hintText: 'Email',
+                            hintText: 'Email'.tr,
                             validators: (String? value) {
                               if (value!.isEmpty) {
-                                return 'Email required';
+                                return 'Email required'.tr;
                               } else if (!value.contains('@')) {
-                                return 'Invalid Email';
+                                return 'Invalid Email'.tr;
                               }
                               return null;
                             },
@@ -103,7 +103,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               width: mQ.width * 0.5,
                               height: mQ.height * 0.060,
                               child: ResuableButton(
-                                  text: "Send Code",
+                                  text: "Send Code".tr,
                                   onPressed: () {
                                     // loginController.signupUser(context);
                                     // final appData = GetStorage();

@@ -27,7 +27,7 @@ class NearbyRestaurants extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Nearby Restaurants',
+                'Nearby Restaurants'.tr,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               // Text(
@@ -329,7 +329,7 @@ class NearbyRestaurants extends StatelessWidget {
                                     ),
                                     Text.rich(
                                       TextSpan(
-                                        text: 'Specialty: ',
+                                        text: 'specialty: ',
                                         style: TextStyle(
                                           color: kPrimary,
                                           fontWeight: FontWeight.w600,

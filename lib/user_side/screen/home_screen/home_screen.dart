@@ -226,7 +226,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             OutlinedButton(
                               child: Text(
-                                'refresh'.tr,
+                                'Refresh'.tr,
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor),
                               ),

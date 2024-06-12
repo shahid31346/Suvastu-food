@@ -67,7 +67,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           ),
                           SizedBox(height: mQ.height * 0.015),
                           Text(
-                            "OTP",
+                            "OTP".tr,
                             style: TextStyle(
                                 color: kPrimary,
                                 fontSize: 30,
@@ -76,7 +76,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           ),
                           SizedBox(height: mQ.height * 0.005),
                           Text(
-                            "We've send the code to your email".tr,
+                            "We have send the code to your email".tr,
                             style: TextStyle(
                               color: kGrey,
                               fontSize: 14,
@@ -120,7 +120,7 @@ class _OtpScreenState extends State<OtpScreen> {
                               width: mQ.width * 0.5,
                               height: mQ.height * 0.060,
                               child: ResuableButton(
-                                  text: "Verify",
+                                  text: "Verify".tr,
                                   onPressed: () {
                                     // loginController.signupUser(context);
                                     // final appData = GetStorage();
@@ -136,7 +136,7 @@ class _OtpScreenState extends State<OtpScreen> {
                             child: TextButton(
                                 onPressed: () {},
                                 child: Text(
-                                  "Resend OTP",
+                                  "Resend OTP".tr,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
                                       color: kPrimary,

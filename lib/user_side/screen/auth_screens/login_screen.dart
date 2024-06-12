@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           SizedBox(height: mQ.height * 0.015),
                           Text(
-                            "Login with Phone",
+                            "Login with Phone".tr,
                             style: TextStyle(
                                 color: kPrimary,
                                 fontSize: 30,
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           SizedBox(height: mQ.height * 0.005),
                           Text(
-                            "Let's get started",
+                            "Lets get started".tr,
                             style: TextStyle(
                               color: kGrey,
                               fontSize: 14,
@@ -82,42 +82,28 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           SizedBox(height: mQ.height * 0.04),
-                          // const Text(
-                          //   'E-mail',
-                          //   style: kTextFieldTitle,
-                          // ),
-                          // const SizedBox(
-                          //   height: 3,
-                          // ),
                           AuthTextField(
                             prefixIcon: Icons.email_outlined,
                             controller: loginUserController.emailController,
                             inputType: TextInputType.emailAddress,
-                            hintText: 'Email',
+                            hintText: 'Email'.tr,
                             validators: (String? value) {
                               if (value!.isEmpty) {
-                                return 'Email required';
+                                return 'Email required'.tr;
                               } else if (!value.contains('@')) {
-                                return 'Invalid Email';
+                                return 'Invalid Email'.tr;
                               }
                               return null;
                             },
                             autofillHints: const [AutofillHints.email],
                           ),
                           SizedBox(height: mQ.height * 0.02),
-                          // const Text(
-                          //   'Password',
-                          //   style: kTextFieldTitle,
-                          // ),
-                          // const SizedBox(
-                          //   height: 3,
-                          // ),
                           PasswordTextField(
                             controller: loginUserController.passwordController,
                             hintText: '********',
                             validators: (String? value) {
                               if (value!.isEmpty) {
-                                return 'Password required';
+                                return 'Password required'.tr;
                               }
                               return null;
                             },
@@ -130,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               TextButton(
                                 style: TextButton.styleFrom(),
                                 child: Text(
-                                  "Forgot Password?",
+                                  "Forgot Password?".tr,
                                   style: TextStyle(
                                       color: kPrimary,
                                       fontSize: 12,
@@ -149,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 width: mQ.width * 0.85,
                                 height: mQ.height * 0.060,
                                 child: ResuableButton(
-                                    text: "Login",
+                                    text: "Login".tr,
                                     onPressed: () {
                                       // loginController.signupUser(context);
                                       // final appData = GetStorage();
@@ -176,8 +162,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Text(
-                                    "Don't have an account? ",
+                                  Text(
+                                    "Dont have an account? ".tr,
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13.5,
@@ -190,8 +176,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                         tapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
                                         alignment: Alignment.centerLeft),
-                                    child: const Text(
-                                      "Sign up",
+                                    child: Text(
+                                      "Sign up".tr,
                                       style:
                                           TextStyle(color: Color(0XFF68B39F)),
                                     ),

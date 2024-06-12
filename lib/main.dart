@@ -10,19 +10,20 @@ import 'package:suvastufood/firebase_options.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/get_started_screen.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/utils/const.dart';
+import 'package:suvastufood/utils/translation.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-     options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
-   await GetStorage.init();
-  runApp(const MyApp());
+  await GetStorage.init();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  final appData = GetStorage();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Poppins',
       ),
+      translations: Languages(), // Language translations
+      locale:
+          Locale(appData.read('language') ?? 'en'), // Default locale is English
+      fallbackLocale: Locale('en_US'), // Fallback locale is English
       debugShowCheckedModeBanner: false,
       home: GetStartedScreen(),
     );

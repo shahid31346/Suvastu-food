@@ -36,7 +36,7 @@ class _AllCategoryState extends State<AllCategory> {
         backgroundColor: kBgColor,
         centerTitle: true,
         title: Text(
-          'Category',
+          'Categories'.tr,
           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
         ),
       ),

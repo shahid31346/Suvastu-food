@@ -78,7 +78,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           SizedBox(height: mQ.height * 0.005),
                           Text(
-                            "Let's get started",
+                            "Lets get started".tr,
                             style: TextStyle(
                               color: kGrey,
                               fontSize: 14,
@@ -90,10 +90,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             prefixIcon: Icons.person_outlined,
                             controller: registerUserController.emailController,
                             inputType: TextInputType.emailAddress,
-                            hintText: 'Full name',
+                            hintText: 'Full name'.tr,
                             validators: (String? value) {
                               if (value!.isEmpty) {
-                                return 'Full Name required';
+                                return 'Full name required'.tr;
                               }
                               return null;
                             },
@@ -104,12 +104,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             prefixIcon: Icons.email_outlined,
                             controller: registerUserController.emailController,
                             inputType: TextInputType.emailAddress,
-                            hintText: 'Email',
+                            hintText: 'Email'.tr,
                             validators: (String? value) {
                               if (value!.isEmpty) {
-                                return 'Email required';
+                                return 'Email required'.tr;
                               } else if (!value.contains('@')) {
-                                return 'Invalid Email';
+                                return 'Invalid Email'.tr;
                               }
                               return null;
                             },
@@ -152,7 +152,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     color: Colors.grey[400]!,
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400),
-                                hintText: "Phone number",
+                                hintText: "Phone number".tr,
                                 border: const OutlineInputBorder(),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -199,7 +199,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             hintText: '********',
                             validators: (String? value) {
                               if (value!.isEmpty) {
-                                return 'Password required';
+                                return 'Password required'.tr;
                               }
                               return null;
                             },
@@ -213,7 +213,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 width: mQ.width * 0.85,
                                 height: mQ.height * 0.060,
                                 child: ResuableButton(
-                                    text: "Register",
+                                    text: "Register".tr,
                                     onPressed: () {
                                       // loginController.signupUser(context);
                                       // final appData = GetStorage();
@@ -240,8 +240,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Text(
-                                    "Already have an account? ",
+                                  Text(
+                                    "Already have an account? ".tr,
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13.5,
@@ -254,8 +254,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         tapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
                                         alignment: Alignment.centerLeft),
-                                    child: const Text(
-                                      "Login",
+                                    child: Text(
+                                      "Login".tr,
                                       style:
                                           TextStyle(color: Color(0XFF68B39F)),
                                     ),

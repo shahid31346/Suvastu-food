@@ -27,7 +27,7 @@ class FoodCardList extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Food for you',
+                'Food for you'.tr,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -37,7 +37,7 @@ class FoodCardList extends StatelessWidget {
                     Get.to(AllFoodForYou());
                   },
                   child: Text(
-                    'See All',
+                    'See All'.tr,
                     style:
                         TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
                   ),

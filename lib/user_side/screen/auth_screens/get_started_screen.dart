@@ -1,13 +1,26 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/global/auth_social_buttons.dart';
 import 'package:suvastufood/global/elevated_button.dart';
+import 'package:suvastufood/user_side/controller/auth_controller/logout_contoller.dart';
+import 'package:suvastufood/user_side/controller/change_language_controller/change_language_controller.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
-class GetStartedScreen extends StatelessWidget {
+class GetStartedScreen extends StatefulWidget {
   const GetStartedScreen({super.key});
+
+  @override
+  State<GetStartedScreen> createState() => _GetStartedScreenState();
+}
+
+class _GetStartedScreenState extends State<GetStartedScreen> {
+  bool _switchValue = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +45,36 @@ class GetStartedScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: mQ.height * 0.48,
+              height: mQ.height * 0.04,
+            ),
+            Container(
+              height: mQ.height * 0.44,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(26.0),
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      child: InkWell(
+                        onTap: () {
+                          _changeLanguageBottomSheet(context);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white.withOpacity(0.4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(Icons.language, color: kPrimary),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Container(
               height: mQ.height * 0.52,
@@ -115,4 +157,58 @@ class GetStartedScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+///////////
+//////////
+//////////CHANGE LANGUAGE BOTTOM SHEET
+void _changeLanguageBottomSheet(BuildContext context) {
+  ChangeLanguageController changeLanguageController =
+      Get.put(ChangeLanguageController());
+  final appData = GetStorage();
+
+  showCupertinoModalPopup<void>(
+    context: context,
+    builder: (BuildContext context) => CupertinoActionSheet(
+      title: Text(
+        'Change Language',
+        style: const TextStyle(fontSize: 20),
+      ),
+      message: Text('Select the language you want to change'),
+      actions: <CupertinoActionSheetAction>[
+        CupertinoActionSheetAction(
+          isDefaultAction: true,
+          onPressed: () {
+            changeLanguageController.changeLanguage('en');
+
+            Navigator.pop(context); // Close the action sheet
+          },
+          child: Text(
+            'English',
+            style: TextStyle(color: kPrimary),
+          ),
+        ),
+        CupertinoActionSheetAction(
+          isDestructiveAction: true,
+          onPressed: () {
+            changeLanguageController.changeLanguage('ur');
+            Navigator.pop(context); // Close the action sheet
+          },
+          child: Text(
+            'Urdu',
+            style: TextStyle(color: Colors.black87),
+          ),
+        ),
+      ],
+      cancelButton: TextButton(
+        child: Text(
+          'cancel',
+          style: TextStyle(color: Theme.of(context).primaryColor),
+        ),
+        onPressed: () {
+          Get.back();
+        },
+      ),
+    ),
+  );
 }

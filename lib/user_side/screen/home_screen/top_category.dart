@@ -28,7 +28,7 @@ class TopCategory extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Top Category',
+                'Top Categories'.tr,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -38,7 +38,7 @@ class TopCategory extends StatelessWidget {
                     Get.to(AllCategory());
                   },
                   child: Text(
-                    'See All',
+                    'See All'.tr,
                     style:
                         TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
                   ),
