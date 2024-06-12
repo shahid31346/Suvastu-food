@@ -1,6 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:animated_snack_bar/animated_snack_bar.dart';
-import 'package:badges/badges.dart' as badges;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,6 +8,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/user_side/screen/home_screen/home_screen.dart';
 import 'package:suvastufood/user_side/screen/orders_screen/orders_main.dart';
+import 'package:suvastufood/user_side/screen/restaurant_flow/mycart_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class MainTabs extends StatefulWidget {
@@ -26,7 +26,13 @@ class _MainTabsState extends State<MainTabs>
 
   int _bottomNavIndex = 0;
 
-  List<Widget> screens = [HomeScreen(), OrdersMain(), LoginScreen()];
+  List<Widget> screens = [
+    HomeScreen(),
+    OrdersMain(),
+    MyCartScreen(),
+    LoginScreen(),
+    MyCartScreen(),
+  ];
   List<IconData> iconList = [
     CupertinoIcons.home,
     CupertinoIcons.square_list,
