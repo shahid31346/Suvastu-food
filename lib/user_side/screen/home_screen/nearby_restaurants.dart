@@ -124,41 +124,48 @@ class NearbyRestaurants extends StatelessWidget {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Row(
                                     children: [
-                                      Container(
-                                        padding: EdgeInsets.zero,
-                                        decoration: BoxDecoration(
-                                          color: kWhite.withOpacity(0.6),
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: Colors.grey[300]!,
-                                              width: 0.5),
-                                        ),
-                                        width: 40,
-                                        height: 40,
-                                        child: ClipOval(
-                                          child: CachedNetworkImage(
-                                            imageUrl:
-                                                'https://w7.pngwing.com/pngs/736/269/png-transparent-food-background-food-fruit-gray-thumbnail.png',
-                                            fit: BoxFit.cover,
-                                            // Ensure the image covers the circular area
-                                            placeholder: (context, url) =>
-                                                Center(
-                                              child: CupertinoActivityIndicator(
-                                                color: kPrimary,
+                                      Expanded(
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              padding: EdgeInsets.zero,
+                                              decoration: BoxDecoration(
+                                                color: kWhite.withOpacity(0.6),
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                    color: Colors.grey[300]!,
+                                                    width: 0.5),
+                                              ),
+                                              width: 40,
+                                              height: 40,
+                                              child: ClipOval(
+                                                child: CachedNetworkImage(
+                                                  imageUrl:
+                                                      'https://w7.pngwing.com/pngs/736/269/png-transparent-food-background-food-fruit-gray-thumbnail.png',
+                                                  fit: BoxFit.cover,
+                                                  // Ensure the image covers the circular area
+                                                  placeholder: (context, url) =>
+                                                      Center(
+                                                    child: CupertinoActivityIndicator(
+                                                      color: kPrimary,
+                                                    ),
+                                                  ),
+                                                  errorWidget:
+                                                      (context, url, error) =>
+                                                          Image.asset(
+                                                    'assets/food.png',
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
                                               ),
                                             ),
-                                            errorWidget:
-                                                (context, url, error) =>
-                                                    Image.asset(
-                                              'assets/food.png',
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
+                                              SizedBox(width: mQ.width * 0.02),
+                                            Text("Khuraki",
+                                                style: TextStyle(color: kWhite)),
+                                          ],
                                         ),
                                       ),
-                                      SizedBox(width: mQ.width * 0.02),
-                                      Text("Khuraki",
-                                          style: TextStyle(color: kWhite)),
+                                    
                                       SizedBox(width: mQ.width * 0.08),
                                       Container(
                                         decoration: BoxDecoration(
