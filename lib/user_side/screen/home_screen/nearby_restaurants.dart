@@ -30,10 +30,10 @@ class NearbyRestaurants extends StatelessWidget {
                 'Nearby Restaurants',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              Text(
-                'See All',
-                style: TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
-              ),
+              // Text(
+              //   'See All',
+              //   style: TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
+              // ),
             ],
           ),
         ),
@@ -52,6 +52,15 @@ class NearbyRestaurants extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     color: kWhite,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 6.0,
+                        spreadRadius: 0.0,
+                        offset:
+                            Offset(2.0, 2.0), // shadow direction: bottom right
+                      )
+                    ],
                     border: Border.all(
                       width: 0.4,
                       color: Theme.of(context)
@@ -67,9 +76,9 @@ class NearbyRestaurants extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: const BorderRadius.only(
-                          // topRight: Radius.circular(8),
-                          topLeft: Radius.circular(18),
-                        ),
+                            // topRight: Radius.circular(18),
+                            // topLeft: Radius.circular(18),
+                            ),
                         child: Stack(
                           children: [
                             ClipRRect(
@@ -108,7 +117,7 @@ class NearbyRestaurants extends StatelessWidget {
                                   },
                                   blendMode: BlendMode.darken, // Blend mode
                                   child: Image.asset(
-                                    "assets/food.png", // Replace with your image asset path
+                                    "assets/food2.png", // Replace with your image asset path
                                     fit: BoxFit.cover,
                                     height: mQ.height * 0.215,
                                     width: mQ.width,
@@ -117,7 +126,52 @@ class NearbyRestaurants extends StatelessWidget {
                               ),
                             ),
                             Positioned.fill(
-                              bottom: 20,
+                              top: 5,
+                              child: Align(
+                                alignment: Alignment.topCenter,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: kWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 6.0, horizontal: 8),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                Iconsax.discount_circle5,
+                                                color: Colors.red,
+                                                size: 18,
+                                              ),
+                                              Text(
+                                                '  upto 10 % off'.tr,
+                                                style: TextStyle(
+                                                  color: Colors.red,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 12.5,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(width: mQ.width * 0.08),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned.fill(
+                              bottom: 8,
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Padding(
@@ -146,7 +200,8 @@ class NearbyRestaurants extends StatelessWidget {
                                                   // Ensure the image covers the circular area
                                                   placeholder: (context, url) =>
                                                       Center(
-                                                    child: CupertinoActivityIndicator(
+                                                    child:
+                                                        CupertinoActivityIndicator(
                                                       color: kPrimary,
                                                     ),
                                                   ),
@@ -159,22 +214,23 @@ class NearbyRestaurants extends StatelessWidget {
                                                 ),
                                               ),
                                             ),
-                                              SizedBox(width: mQ.width * 0.02),
+                                            SizedBox(width: mQ.width * 0.02),
                                             Text("Khuraki",
-                                                style: TextStyle(color: kWhite)),
+                                                style:
+                                                    TextStyle(color: kWhite)),
                                           ],
                                         ),
                                       ),
-                                    
                                       SizedBox(width: mQ.width * 0.08),
                                       Container(
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(20),
                                             color:
-                                                Colors.yellow.withOpacity(0.3)),
+                                                Colors.white.withOpacity(0.2)),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10.0, vertical: 6),
                                           child: Row(
                                             children: [
                                               Icon(
@@ -182,6 +238,7 @@ class NearbyRestaurants extends StatelessWidget {
                                                 color: Colors.yellow[800],
                                                 size: 18,
                                               ),
+                                              SizedBox(width: mQ.width * 0.01),
                                               Text("3.7",
                                                   style: TextStyle(
                                                     color: Colors.yellow[800],
@@ -207,50 +264,47 @@ class NearbyRestaurants extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  'Title',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    color: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .color!
-                                        .withOpacity(0.8),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 13.6,
-                                  ),
-                                ),
                                 Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Icon(
-                                      Icons.star,
-                                      color: Colors.yellow[800],
-                                      size: 18,
+                                      Icons.bike_scooter,
+                                      size: 21,
+                                    ),
+                                    SizedBox(
+                                      width: mQ.width * 0.02,
                                     ),
                                     Text(
-                                      'Rating',
+                                      'Free Delivery',
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        color: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium!
-                                            .color!,
-                                        fontWeight: FontWeight.bold,
+                                        color: kPrimary,
+                                        fontWeight: FontWeight.w600,
                                         fontSize: 13,
                                       ),
                                     ),
+                                  ],
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.location_on,
+                                      color: Colors.black54,
+                                      size: 21,
+                                    ),
+                                    SizedBox(
+                                      width: mQ.width * 0.02,
+                                    ),
                                     Text(
-                                      '2',
+                                      '34 KM',
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        color: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium!
-                                            .color!
-                                            .withOpacity(0.6),
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 13,
                                       ),
                                     ),
                                   ],
@@ -258,92 +312,47 @@ class NearbyRestaurants extends StatelessWidget {
                               ],
                             ),
                             SizedBox(
-                              height: mQ.height * 0.002,
-                            ),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    'Subtitle',
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      color: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .color!
-                                          .withOpacity(0.6),
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12.5,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: mQ.height * 0.015,
+                              height: mQ.height * 0.017,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Icon(
-                                      Icons.schedule_outlined,
-                                      color: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .color!
-                                          .withOpacity(0.6),
-                                      size: 18,
+                                      Icons.cookie,
+                                      size: 21,
                                     ),
-                                    Text(
-                                      'Time',
-                                      style: TextStyle(
-                                        color: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium!
-                                            .color!
-                                            .withOpacity(0.6),
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12.5,
+                                    SizedBox(
+                                      width: mQ.width * 0.02,
+                                    ),
+                                    Text.rich(
+                                      TextSpan(
+                                        text: 'Specialty: ',
+                                        style: TextStyle(
+                                          color: kPrimary,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 13,
+                                        ),
+                                        children: [
+                                          TextSpan(
+                                            text: 'Baryani, Chicken',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ],
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context)
-                                        .primaryColor
-                                        .withOpacity(0.15),
-                                    borderRadius: BorderRadius.circular(6),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 6.0, horizontal: 8),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Icon(
-                                          Iconsax.discount_circle5,
-                                          color: Theme.of(context)
-                                              .primaryColor
-                                              .withOpacity(0.8),
-                                          size: 18,
-                                        ),
-                                        Text(
-                                          ' upto 10 % off'.tr,
-                                          style: TextStyle(
-                                            color: Theme.of(context)
-                                                .primaryColor
-                                                .withOpacity(0.8),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12.5,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                                Icon(
+                                  Icons.my_location,
+                                  color: Colors.red,
+                                  size: 22,
+                                )
                               ],
                             ),
                           ],

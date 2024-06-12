@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/user_side/screen/home_screen/home_screen.dart';
+import 'package:suvastufood/user_side/screen/orders_screen/orders_main.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class MainTabs extends StatefulWidget {
@@ -25,7 +26,7 @@ class _MainTabsState extends State<MainTabs>
 
   int _bottomNavIndex = 0;
 
-  List<Widget> screens = [HomeScreen(), LoginScreen()];
+  List<Widget> screens = [HomeScreen(), OrdersMain(), LoginScreen()];
   List<IconData> iconList = [
     CupertinoIcons.home,
     CupertinoIcons.square_list,

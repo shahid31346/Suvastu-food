@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:suvastufood/user_side/screen/home_screen/all_food_for_you.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class FoodCardList extends StatelessWidget {
@@ -18,8 +21,8 @@ class FoodCardList extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(
-              left: 14.0, right: 14, top: 14, bottom: 8.0),
+          padding:
+              const EdgeInsets.only(left: 14.0, right: 14, top: 5, bottom: 6.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -27,9 +30,18 @@ class FoodCardList extends StatelessWidget {
                 'Food for you',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              Text(
-                'See All',
-                style: TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
+              SizedBox(
+                height: mQ.height * 0.045,
+                child: TextButton(
+                  onPressed: () {
+                    Get.to(AllFoodForYou());
+                  },
+                  child: Text(
+                    'See All',
+                    style:
+                        TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
+                  ),
+                ),
               ),
             ],
           ),
@@ -50,6 +62,26 @@ class FoodCardList extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Container(
                   width: mQ.width * 0.36,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 0.4,
+                      color: Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .color!
+                          .withOpacity(0.3),
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     color: Colors.black26,
+                    //     blurRadius: 6.0,
+                    //     spreadRadius: 0.0,
+                    //     offset:
+                    //         Offset(2.0, 2.0), // shadow direction: bottom right
+                    //   )
+                    // ],
+                  ),
                   child: Stack(
                     children: [
                       ClipRRect(
@@ -61,7 +93,7 @@ class FoodCardList extends StatelessWidget {
                               end: Alignment.topCenter,
                               colors: [
                                 Colors.black.withOpacity(
-                                    0.5), // Blend color at the bottom
+                                    0.7), // Blend color at the bottom
                                 Colors.transparent, // No blend at the top
                               ],
                             ).createShader(bounds);
@@ -96,14 +128,14 @@ class FoodCardList extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.schedule,
-                                  color: kWhite,
+                                  color: kWhite.withOpacity(0.8),
                                   size: 18,
                                 ),
                                 SizedBox(width: mQ.width * 0.005),
                                 Text(
                                   '30-40 min'.tr,
                                   style: TextStyle(
-                                    color: kWhite,
+                                    color: kWhite.withOpacity(0.8),
                                     fontWeight: FontWeight.w400,
                                     fontSize: 12.5,
                                   ),
@@ -115,7 +147,7 @@ class FoodCardList extends StatelessWidget {
                               '\$300',
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                color: kWhite,
+                                color: kWhite.withOpacity(0.8),
                                 fontWeight: FontWeight.w500,
                                 fontSize: 13,
                               ),

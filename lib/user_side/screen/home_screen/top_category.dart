@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:suvastufood/user_side/screen/home_screen/all_catergory.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class TopCategory extends StatelessWidget {
@@ -20,8 +22,8 @@ class TopCategory extends StatelessWidget {
       children: [
         // Top Category
         Padding(
-          padding: const EdgeInsets.only(
-              left: 14.0, right: 14, top: 14, bottom: 8.0),
+          padding:
+              const EdgeInsets.only(left: 14.0, right: 14, top: 5, bottom: 0.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -29,9 +31,18 @@ class TopCategory extends StatelessWidget {
                 'Top Category',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              Text(
-                'See All',
-                style: TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
+              SizedBox(
+                height: mQ.height * 0.040,
+                child: TextButton(
+                  onPressed: () {
+                    Get.to(AllCategory());
+                  },
+                  child: Text(
+                    'See All',
+                    style:
+                        TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
+                  ),
+                ),
               ),
             ],
           ),
