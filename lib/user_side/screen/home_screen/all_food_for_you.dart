@@ -62,9 +62,9 @@ class _AllFoodForYouState extends State<AllFoodForYou> {
               child: Row(
                 children: [
                   Expanded(
-                    flex: 3,
+                    flex: 4,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                       child: SizedBox(
                         child: Stack(
                           children: [

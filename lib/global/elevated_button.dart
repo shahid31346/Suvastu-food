@@ -22,6 +22,7 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mQ = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ElevatedButton(
@@ -38,31 +39,42 @@ class CustomElevatedButton extends StatelessWidget {
           ),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Expanded(
-                flex: 3,
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Icon(
-                    iconData,
-                    color: iconColor ??
-                        Theme.of(context).textTheme.bodySmall!.color!,
-                  ),
-                )), // Add icon here
-
-            Expanded(
-              flex: 7,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  text,
-                  style: TextStyle(
-                      color: textColor,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14),
-                ),
-              ),
+            Icon(
+              iconData,
+              color: iconColor ?? Theme.of(context).textTheme.bodySmall!.color!,
             ),
+            SizedBox(width: mQ.width * 0.1),
+            Text(
+              text,
+              style: TextStyle(
+                  color: textColor, fontWeight: FontWeight.w500, fontSize: 14),
+            ),
+            // Expanded(
+            //     flex: 3,
+            //     child: Align(
+            //       alignment: Alignment.centerLeft,
+            //       child: Icon(
+            //         iconData,
+            //         color: iconColor ??
+            //             Theme.of(context).textTheme.bodySmall!.color!,
+            //       ),
+            //     )), // Add icon here
+            //
+            // Expanded(
+            //   flex: 7,
+            //   child: Align(
+            //     alignment: Alignment.centerLeft,
+            //     child: Text(
+            //       text,
+            //       style: TextStyle(
+            //           color: textColor,
+            //           fontWeight: FontWeight.w500,
+            //           fontSize: 14),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

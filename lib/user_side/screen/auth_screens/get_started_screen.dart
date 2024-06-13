@@ -58,7 +58,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                       alignment: Alignment.bottomRight,
                       child: InkWell(
                         onTap: () {
-                          _changeLanguageBottomSheet(context);
+                          changeLanguageBottomSheet(context);
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -67,7 +67,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Icon(Icons.language, color: kPrimary),
+                            child: Icon(Icons.language, color: kWhite),
                           ),
                         ),
                       ),
@@ -162,7 +162,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
 ///////////
 //////////
 //////////CHANGE LANGUAGE BOTTOM SHEET
-void _changeLanguageBottomSheet(BuildContext context) {
+void changeLanguageBottomSheet(BuildContext context) {
   ChangeLanguageController changeLanguageController =
       Get.put(ChangeLanguageController());
   final appData = GetStorage();

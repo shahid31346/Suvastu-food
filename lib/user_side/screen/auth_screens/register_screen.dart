@@ -30,6 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   RegisterUserController registerUserController =
       Get.put(RegisterUserController());
+  final appData = GetStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -130,6 +131,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   ),
                                 ]),
                             child: IntlPhoneField(
+                              textAlign: appData.read('language') == 'ur'
+                                  ? TextAlign.right
+                                  : TextAlign.left,
+
                               showCountryFlag: true,
                               flagsButtonPadding: const EdgeInsets.all(4),
                               dropdownIconPosition: IconPosition.trailing,
@@ -141,6 +146,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     .color!
                                     .withOpacity(0.85),
                               ),
+
                               style: TextStyle(
                                 fontSize: 14,
                               ),
@@ -260,6 +266,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           TextStyle(color: Color(0XFF68B39F)),
                                     ),
                                     onPressed: () {
+                                      Get.to(() => LoginScreen());
                                       FocusScope.of(context).unfocus();
                                     },
                                   ),

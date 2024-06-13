@@ -62,7 +62,7 @@ class _MainTabsState extends State<MainTabs>
       onWillPop: () async {
         final now = DateTime.now();
         if (lastTap != null &&
-            now.difference(lastTap!) < const Duration(seconds: 1)) {
+            now.difference(lastTap!) < const Duration(seconds: 2)) {
           SystemNavigator.pop();
           return true;
         }
