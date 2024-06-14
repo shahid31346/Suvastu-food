@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:suvastufood/user_side/screen/home_screen/all_nearby_restaurants.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class NearbyRestaurants extends StatelessWidget {
@@ -22,7 +23,7 @@ class NearbyRestaurants extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(
-              left: 14.0, right: 14, top: 20, bottom: 8.0),
+              left: 14.0, right: 14, top: 20, bottom: 0.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -30,10 +31,19 @@ class NearbyRestaurants extends StatelessWidget {
                 'Nearby Restaurants'.tr,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              // Text(
-              //   'See All',
-              //   style: TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
-              // ),
+              SizedBox(
+                height: mQ.height * 0.045,
+                child: TextButton(
+                  onPressed: () {
+                    Get.to(AllNearbyRestaurants());
+                  },
+                  child: Text(
+                    'See All'.tr,
+                    style:
+                        TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

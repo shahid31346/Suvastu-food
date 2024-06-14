@@ -133,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             children: [
                               SizedBox(
                                 width: mQ.width * 0.85,
-                                height: mQ.height * 0.060,
+                                height: 50,
                                 child: ResuableButton(
                                     text: "Login".tr,
                                     onPressed: () {
@@ -156,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
 
                               SizedBox(
-                                height: mQ.height * 0.07,
+                                height: mQ.height * 0.05,
                               ),
                               //if don't have an account then go to sign up
                               Row(

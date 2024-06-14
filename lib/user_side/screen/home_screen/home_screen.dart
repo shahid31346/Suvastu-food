@@ -103,8 +103,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white.withOpacity(0.1)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Icon(
                         CupertinoIcons.globe,
                         color: kWhite,
@@ -117,8 +117,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white.withOpacity(0.1)),
-                  child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: badges.Badge(
                         badgeContent: Text('3'),
                         child: Icon(
@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           opacity: 0.1,
                           fit: BoxFit.cover,
-                          image: new AssetImage(
+                          image: const AssetImage(
                             "assets/food.png",
                           ),
                         ),
