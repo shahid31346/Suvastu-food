@@ -64,9 +64,13 @@ dependencies:
   geocoding: ^2.1.1
   geolocator: ^12.0.0
   font_awesome_flutter: ^10.7.0
+  #image
   cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.6
   #responsive
   responsive_builder: ^0.7.0
+
+
   
 
 

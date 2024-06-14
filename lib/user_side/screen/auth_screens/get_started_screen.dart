@@ -9,6 +9,7 @@ import 'package:suvastufood/global/auth_social_buttons.dart';
 import 'package:suvastufood/global/elevated_button.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/logout_contoller.dart';
 import 'package:suvastufood/user_side/controller/change_language_controller/change_language_controller.dart';
+import 'package:suvastufood/user_side/main_tabs.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
@@ -47,34 +48,71 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             SizedBox(
               height: mQ.height * 0.04,
             ),
-            Container(
-              height: mQ.height * 0.44,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(26.0),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: InkWell(
-                        onTap: () {
-                          changeLanguageBottomSheet(context);
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white.withOpacity(0.4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(Icons.language, color: kWhite),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: mQ.height * 0.44,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(26.0),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: InkWell(
+                            onTap: () {
+                              changeLanguageBottomSheet(context);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white.withOpacity(0.4),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(Icons.language, color: kWhite),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Container(
+                  height: mQ.height * 0.44,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(26.0),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(MainTabs());
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white.withOpacity(0.4),
+                              ),
+                              child: Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Skip',
+                                    style: TextStyle(
+                                        color: kWhite,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600),
+                                  )),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             Container(
               height: mQ.height * 0.52,
