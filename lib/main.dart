@@ -10,6 +10,7 @@ import 'package:suvastufood/firebase_options.dart';
 import 'package:suvastufood/test/test.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/get_started_screen.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_home.dart';
 import 'package:suvastufood/user_side/screen/onboarding_screen/onboarding_screen.dart';
 import 'package:suvastufood/user_side/screen/restaurant_flow/food_details.dart';
 import 'package:suvastufood/utils/const.dart';
@@ -42,9 +43,7 @@ class MyApp extends StatelessWidget {
           Locale(appData.read('language') ?? 'en'), // Default locale is English
       fallbackLocale: Locale('en_US'), // Fallback locale is English
       debugShowCheckedModeBanner: false,
-      home: FoodDetailsScreen(),
+      home: OnboardingScreen(),
     );
   }
 }
-
-////

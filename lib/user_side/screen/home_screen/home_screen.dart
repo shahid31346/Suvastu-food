@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           )
                         : GestureDetector(
                             onTap: () async {
-                              homeController.getCurrentLocation(true);
+                              homeController.getCurrentLocation();
                             },
                             child: Row(
                               children: [

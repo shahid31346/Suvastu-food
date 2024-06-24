@@ -46,7 +46,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
             child: Container(
               height: 40,
               decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(0.05), shape: BoxShape.circle),
+                  color: kSecondaryMain.withOpacity(0.05),
+                  shape: BoxShape.circle),
               child: IconButton(
                 onPressed: () {
                   deleteAlert(
@@ -55,7 +56,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                       context: context);
                 },
                 padding: EdgeInsets.zero,
-                icon: Icon(CupertinoIcons.delete, size: 20, color: Colors.red),
+                icon: Icon(CupertinoIcons.delete,
+                    size: 20, color: kSecondaryMain),
               ),
             ),
           ),
@@ -155,7 +157,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.red,
+                                  color: kSecondaryMain,
                                 ),
                                 textAlign: TextAlign.right,
                               ),
@@ -329,7 +331,7 @@ deleteAlert({String? message, String? title, BuildContext? context}) {
                   children: <Widget>[
                     Text(
                       'Yes',
-                      style: TextStyle(fontSize: 14, color: Colors.red),
+                      style: TextStyle(fontSize: 14, color: kSecondaryMain),
                     ),
                   ],
                 ),

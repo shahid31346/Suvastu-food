@@ -84,7 +84,7 @@ class _AllFoodForYouState extends State<AllFoodForYou> {
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 5, vertical: 2),
                                     decoration: BoxDecoration(
-                                      color: Colors.red.withOpacity(0.5),
+                                      color: kSecondaryMain.withOpacity(0.5),
                                       borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10),
                                         topRight: Radius.circular(10),
@@ -132,7 +132,7 @@ class _AllFoodForYouState extends State<AllFoodForYou> {
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.red,
+                                  color: kSecondaryMain,
                                 ),
                                 textAlign: TextAlign.right,
                               ),

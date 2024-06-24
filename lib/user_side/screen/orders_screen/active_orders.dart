@@ -182,7 +182,7 @@ class _ActiveOrdersState extends State<ActiveOrders> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
-                            color: Colors.red,
+                            color: kSecondaryMain,
                           ),
                           textAlign: TextAlign.right,
                         ),
