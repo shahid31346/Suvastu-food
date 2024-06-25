@@ -17,19 +17,19 @@ class RoundedCheckboxListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:  4.0),
+      padding: const EdgeInsets.symmetric(vertical:  6.0),
       child: Column(
         children: [
           Container(
             decoration: BoxDecoration(
-               borderRadius:  BorderRadius.all(Radius.circular(6)),
+               borderRadius:  BorderRadius.all(Radius.circular(4)),
                border: Border.all(color: Colors.grey[400]!, width: 0.2 )
             ),
             child: InkWell(
-              borderRadius: const BorderRadius.all(Radius.circular(6)),
+              borderRadius: const BorderRadius.all(Radius.circular(4)),
               onTap: press,
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 6),
                 child: Row(
                   children: [
                     CircleCheckBox(isActive: isActive),

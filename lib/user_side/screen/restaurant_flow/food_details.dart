@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suvastufood/global/primary_button.dart';
 import 'package:suvastufood/utils/const.dart';
 
 import 'components/info.dart';
@@ -20,9 +21,12 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
   int choiceOfBottomCookie = 1;
 
   int numOfItems = 1;
+  int quantity = 1;
+
 
   @override
   Widget build(BuildContext context) {
+    final mQ = MediaQuery.of(context).size;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -33,10 +37,10 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
             style: ElevatedButton.styleFrom(
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(100))),
-              backgroundColor: Colors.black.withOpacity(0.5),
+              backgroundColor: Colors.black.withOpacity(0.1),
               padding: EdgeInsets.zero,
             ),
-            child: const Icon(Icons.close, color: Colors.white),
+            child: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () => Navigator.pop(context),
           ),
         ),
@@ -68,8 +72,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       ),
                     ),
                     const SizedBox(height: defaultPadding),
-                    const RequiredSectionTitle(
-                        title: "Extra's"),
+                    const RequiredSectionTitle(title: "Extra's"),
                     const SizedBox(height: defaultPadding),
                     ...List.generate(
                       choiceOfTopCookies.length,
@@ -85,12 +88,41 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     ),
                     const SizedBox(height: defaultPadding),
                     // // Num of item
-                    Row(
+                 
+                  ],
+                ),
+              ),
+              const SizedBox(height: defaultPadding)
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: SizedBox(
+        height: 75,
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 8,
+            ),
+            Container(
+              height: 55,
+              decoration:
+                  //  BoxDecoration(color: Theme.of(context).colorScheme.background),
+                  BoxDecoration(
+                //  color: Colors.red,
+                color: Theme.of(context).colorScheme.background,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: 40,
-                          width: 40,
+                          height: 38,
+                          width: 38,
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
@@ -102,13 +134,13 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: defaultPadding),
+                              horizontal: 12),
                           child: Text(numOfItems.toString().padLeft(2, "0"),
                               style: Theme.of(context).textTheme.titleLarge),
                         ),
                         SizedBox(
-                          height: 40,
-                          width: 40,
+                          height: 38,
+                          width: 38,
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
@@ -120,24 +152,43 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: defaultPadding),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => const OrderDetailsScreen(),
-                        //   ),
-                        // );
-                      },
-                      child: const Text("Add to Order (\$11.98)"),
+                    Container(
+                      height: mQ.height * 0.058,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Theme.of(context)
+                                .primaryColor
+                                .withOpacity(0.6), // Shadow color
+                            spreadRadius: 0, // No spreading of the shadow
+                            blurRadius: 16,
+                            offset: const Offset(
+                                0, 4), // Offset for vertical elevation
+                          ),
+                        ],
+                      ),
+                      child: PrimaryButton(
+                        onPressed: () {},
+                        label:
+                            "${'Add to cart'} (Rs 12.25)",
+                        elevation: 3,
+                        bgColor: Theme.of(context).primaryColor,
+                        labelStyle: TextStyle(
+                          color: kWhite,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 0.15,
+                          fontSize: 14,
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: defaultPadding)
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+          ],
         ),
       ),
     );
@@ -154,7 +205,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
     "White Chocolate Macadamia",
   ];
 
-    List<String> variety = [
+  List<String> variety = [
     "Small",
     "Medium",
     "Large",
