@@ -9,7 +9,9 @@ import 'package:suvastufood/global/auth_social_buttons.dart';
 import 'package:suvastufood/global/elevated_button.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/logout_contoller.dart';
 import 'package:suvastufood/user_side/controller/change_language_controller/change_language_controller.dart';
+import 'package:suvastufood/user_side/main_tabs.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_phone.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class GetStartedScreen extends StatefulWidget {
@@ -20,7 +22,8 @@ class GetStartedScreen extends StatefulWidget {
 }
 
 class _GetStartedScreenState extends State<GetStartedScreen> {
-  bool _switchValue = false;
+  ChangeLanguageController changeLanguageController =
+      Get.put(ChangeLanguageController());
 
   @override
   Widget build(BuildContext context) {
@@ -47,34 +50,96 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             SizedBox(
               height: mQ.height * 0.04,
             ),
-            Container(
-              height: mQ.height * 0.44,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(26.0),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: InkWell(
-                        onTap: () {
-                          _changeLanguageBottomSheet(context);
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white.withOpacity(0.4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(Icons.language, color: kPrimary),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: mQ.height * 0.44,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(26.0),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: InkWell(
+                            onTap: () {
+                              changeLanguageBottomSheet(context);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.white.withOpacity(0.3),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10.0, vertical: 8),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.language, color: kWhite),
+                                    SizedBox(
+                                      width: mQ.width * 0.02,
+                                    ),
+                                    Obx(() {
+                                      return changeLanguageController
+                                                  .selectedLanguage.value ==
+                                              'en'
+                                          ? Text(
+                                              'English',
+                                              style: TextStyle(
+                                                  color: kWhite,
+                                                  fontWeight: FontWeight.w600),
+                                            )
+                                          : Text(
+                                              'Urdu',
+                                              style: TextStyle(
+                                                  color: kWhite,
+                                                  fontWeight: FontWeight.w600),
+                                            );
+                                    }),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Container(
+                  height: mQ.height * 0.44,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(26.0),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(MainTabs());
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white.withOpacity(0.4),
+                              ),
+                              child: Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Skip',
+                                    style: TextStyle(
+                                        color: kWhite,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600),
+                                  )),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             Container(
               height: mQ.height * 0.52,
@@ -133,7 +198,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                       height: mQ.height * 0.065,
                       child: CustomElevatedButton(
                         onPressed: () {
-                          // Get.back();
+                          Get.to(LoginWithPhoneScreen());
                         },
                         text: 'Continue with phone'.tr,
                         textColor: Colors.grey[600],
@@ -162,7 +227,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
 ///////////
 //////////
 //////////CHANGE LANGUAGE BOTTOM SHEET
-void _changeLanguageBottomSheet(BuildContext context) {
+void changeLanguageBottomSheet(BuildContext context) {
   ChangeLanguageController changeLanguageController =
       Get.put(ChangeLanguageController());
   final appData = GetStorage();

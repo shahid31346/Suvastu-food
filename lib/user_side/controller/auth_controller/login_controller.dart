@@ -12,6 +12,7 @@ import 'package:http/http.dart';
 import 'package:suvastufood/global/error_dialog.dart';
 import 'package:suvastufood/global/fullscreen_dialog_loading.dart';
 import 'package:suvastufood/services/remote_services.dart';
+import 'package:suvastufood/user_side/main_tabs.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class LoginUserController extends GetxController {
@@ -24,7 +25,8 @@ class LoginUserController extends GetxController {
   // TextEditingController(text: "");
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  TextEditingController phoneNumberController = TextEditingController();
+  String countryCode = '';
   String androidToken = '';
   String iosToken = '';
 
@@ -145,7 +147,6 @@ class LoginUserController extends GetxController {
     loggedIn = true;
     emailController.clear();
     passwordController.clear();
-    // Get.offAll(() =>
-    // );
+    Get.offAll(MainTabs());
   }
 }

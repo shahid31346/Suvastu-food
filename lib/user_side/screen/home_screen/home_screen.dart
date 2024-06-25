@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:suvastufood/global/auth_textfield.dart';
 import 'package:suvastufood/user_side/controller/home_controller.dart/home_controller.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/get_started_screen.dart';
 import 'package:suvastufood/user_side/screen/home_screen/food_for_you.dart';
 import 'package:suvastufood/user_side/screen/home_screen/nearby_restaurants.dart';
 import 'package:suvastufood/user_side/screen/home_screen/top_category.dart';
@@ -68,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           )
                         : GestureDetector(
                             onTap: () async {
-                              homeController.getCurrentLocation(true);
+                              homeController.getCurrentLocation();
                             },
                             child: Row(
                               children: [
@@ -94,15 +95,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                   ),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.1)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(
-                      CupertinoIcons.heart,
-                      color: kWhite,
+                InkWell(
+                  onTap: () {
+                    changeLanguageBottomSheet(context);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white.withOpacity(0.1)),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        CupertinoIcons.globe,
+                        color: kWhite,
+                      ),
                     ),
                   ),
                 ),
@@ -111,8 +117,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white.withOpacity(0.1)),
-                  child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: badges.Badge(
                         badgeContent: Text('3'),
                         child: Icon(
@@ -140,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           opacity: 0.1,
                           fit: BoxFit.cover,
-                          image: new AssetImage(
+                          image: const AssetImage(
                             "assets/food.png",
                           ),
                         ),

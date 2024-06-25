@@ -3,13 +3,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:suvastufood/user_side/screen/home_screen/all_nearby_restaurants.dart';
-import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_home.dart';
-
 import 'package:suvastufood/utils/const.dart';
 
-class NearbyRestaurants extends StatelessWidget {
-  NearbyRestaurants({super.key});
+class AllNearbyRestaurants extends StatefulWidget {
+  const AllNearbyRestaurants({super.key});
+
+  @override
+  State<AllNearbyRestaurants> createState() => _AllNearbyRestaurantsState();
+}
+
+class _AllNearbyRestaurantsState extends State<AllNearbyRestaurants> {
   final List<String> categories = [
     'Local Food',
     'Fast Food',
@@ -20,51 +23,64 @@ class NearbyRestaurants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mQ = MediaQuery.of(context).size;
-
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(
-              left: 14.0, right: 14, top: 20, bottom: 0.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Nearby Restaurants'.tr,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: mQ.height * 0.045,
-                child: TextButton(
-                  onPressed: () {
-                    Get.to(AllNearbyRestaurants());
-                  },
-                  child: Text(
-                    'See All'.tr,
-                    style:
-                        TextStyle(color: kPrimary, fontWeight: FontWeight.w500),
+    return Scaffold(
+      backgroundColor: kBgColor,
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            pinned: true,
+            backgroundColor: kBgColor,
+            centerTitle: true,
+            title: Text(
+              'Restaurants'.tr,
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+            ),
+            bottom: PreferredSize(
+              preferredSize:
+                  Size.fromHeight(60.0), // Height of the TextFormField
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
+                child: TextFormField(
+                  // controller: homeController.searchController,
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 0.3),
+                  decoration: InputDecoration(
+                    filled: true,
+                    prefixIcon: Icon(Icons.search, color: kGrey, size: 20),
+                    suffixIcon:
+                        IconButton(onPressed: () {}, icon: Icon(Icons.tune)),
+                    fillColor: kWhite,
+                    isDense: true,
+                    hintStyle: TextStyle(
+                        color: Colors.grey[400]!,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400),
+                    hintText: 'Search restaurant, food',
+                    border: const OutlineInputBorder(),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.grey[300]!, width: 0.5),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: kPrimary, width: 0.5),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
               ),
-            ],
+            ),
           ),
-        ),
-        SizedBox(
-          child: ListView.builder(
-            primary: false,
-            shrinkWrap: true,
-            itemCount: categories.length,
-            scrollDirection: Axis.vertical,
-            padding: const EdgeInsets.only(left: 14, right: 14),
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (BuildContext context, int index) {
-              var item = categories[index];
-              return InkWell(
-                onTap: () {
-                  Get.to(RestaurantHome());
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                var item = categories[index];
+                return Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
                   child: Container(
                     decoration: BoxDecoration(
                       color: kWhite,
@@ -388,12 +404,13 @@ class NearbyRestaurants extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+              childCount: categories.length,
+            ),
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }
