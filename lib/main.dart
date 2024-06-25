@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/firebase_options.dart';
+import 'package:suvastufood/user_side/main_tabs.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/get_started_screen.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/utils/const.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           Locale(appData.read('language') ?? 'en'), // Default locale is English
       fallbackLocale: Locale('en_US'), // Fallback locale is English
       debugShowCheckedModeBanner: false,
-      home: GetStartedScreen(),
+      home: MainTabs(),
     );
   }
 }
