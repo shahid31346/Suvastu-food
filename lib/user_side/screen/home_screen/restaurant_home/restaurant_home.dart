@@ -1,11 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:smooth_star_rating_nsafe/smooth_star_rating.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_about.dart';
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_availability.dart';
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_menu.dart';
@@ -23,15 +18,6 @@ class RestaurantHome extends StatefulWidget {
 
 class _RestaurantHomeState extends State<RestaurantHome> {
   final controller = Get.put(SliverScrollController());
-  final List<String> categories = [
-    'Local Food',
-    'Fast Food',
-    'Dessert',
-    'Dessert',
-    'Dessert',
-    'Dessert',
-    'Drinks',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +28,7 @@ class _RestaurantHomeState extends State<RestaurantHome> {
         return DefaultTabController(
           length: 4,
           child: CustomScrollView(
-            physics: const BouncingScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(),
             controller: controller.scrollControllerGlobally,
             slivers: <Widget>[
               SliverAppBar(
@@ -122,18 +108,19 @@ class _RestaurantHomeState extends State<RestaurantHome> {
                 pinned: true,
                 delegate: HeaderSliver(controller: controller),
               ),
-              SliverFillRemaining(
-                child: TabBarView(
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [Menu(), Availability(), About(), Reviews()],
-                ),
-              ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
+                  addAutomaticKeepAlives: false,
                   (context, index) {
-                    final product = categories[index];
+                    return SizedBox(
+                      height: mQ.height,
+                      child: TabBarView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        children: [Menu(), Availability(), About(), Reviews()],
+                      ),
+                    );
                   },
-                  childCount: categories.length,
+                  childCount: 1,
                 ),
               ),
             ],
@@ -239,20 +226,25 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
             child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 400),
                 child: percent > 0.09
-                    ? Container(
-                        padding: EdgeInsets.zero,
-                        color: Theme.of(context).scaffoldBackgroundColor,
-                        child: TabBar(
-                          tabAlignment: TabAlignment.fill,
-                          indicatorColor: kPrimary,
-                          labelPadding: EdgeInsets.symmetric(horizontal: 0.0),
-                          tabs: [
-                            Tab(text: 'Menu'),
-                            Tab(text: 'Availability'),
-                            Tab(text: 'About'),
-                            Tab(text: 'Review'),
-                          ],
-                        ),
+                    ? Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.zero,
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                            child: TabBar(
+                              tabAlignment: TabAlignment.fill,
+                              indicatorColor: kPrimary,
+                              labelPadding:
+                                  EdgeInsets.symmetric(horizontal: 0.0),
+                              tabs: [
+                                Tab(text: 'Menu'),
+                                Tab(text: 'Availability'),
+                                Tab(text: 'About'),
+                                Tab(text: 'Review'),
+                              ],
+                            ),
+                          ),
+                        ],
                       )
                     : Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -477,18 +469,12 @@ class SliverScrollController extends GetxController {
   void _listenToScrollChange() {
     globalOffsetValue.value = scrollControllerGlobally.offset;
     if (scrollControllerGlobally.position.userScrollDirection ==
-        ScrollDirection.reverse) {
+        ScrollDirection.forward) {
       goingDown.value = true;
     } else {
       goingDown.value = false;
     }
   }
-
-  void refreshHeader(
-    int index,
-    bool visible, {
-    int? lastIndex,
-  }) {}
 
   @override
   void dispose() {

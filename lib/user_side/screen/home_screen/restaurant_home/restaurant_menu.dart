@@ -20,7 +20,7 @@ class _MenuState extends State<Menu> {
       children: [
         SizedBox(
           width: double.infinity,
-          height: mQ.height * 0.08,
+          height: mQ.height * 0.06,
           child: ListView.builder(
             padding: EdgeInsets.zero,
             shrinkWrap: true,
@@ -40,7 +40,8 @@ class _MenuState extends State<Menu> {
                   child: Column(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(12),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 10),
                         decoration: ShapeDecoration(
                           shadows: [
                             BoxShadow(
@@ -51,17 +52,18 @@ class _MenuState extends State<Menu> {
                             )
                           ],
                           color: selectedItemIndex == index
-                              ? kGrey
-                              : Colors.transparent,
+                              ? Colors.grey[800]
+                              : kWhite,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(8),
                             side: BorderSide(color: kGrey, width: 0.2),
                           ),
                         ),
                         child: Text(
                           'Burger $index',
                           style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
                             color: selectedItemIndex == index ? kWhite : kGrey,
                           ),
                         ),
@@ -75,6 +77,7 @@ class _MenuState extends State<Menu> {
         ),
         Expanded(
           child: PageView(
+            physics: AlwaysScrollableScrollPhysics(),
             controller: _pageController,
             onPageChanged: (index) {
               setState(() {
@@ -123,7 +126,8 @@ class CategoryScreen extends StatelessWidget {
         ),
         Expanded(
           child: ListView.builder(
-            itemCount: 4,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 10,
             padding: EdgeInsets.zero,
             itemBuilder: (context, index) {
               return Padding(
