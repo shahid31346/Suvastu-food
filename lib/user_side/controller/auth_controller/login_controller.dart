@@ -25,7 +25,8 @@ class LoginUserController extends GetxController {
   // TextEditingController(text: "");
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  TextEditingController phoneNumberController = TextEditingController();
+  String countryCode = '';
   String androidToken = '';
   String iosToken = '';
 

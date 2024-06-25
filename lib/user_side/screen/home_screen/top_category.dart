@@ -59,7 +59,7 @@ class TopCategory extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: kGrey.withOpacity(0.4)),
+                      border: Border.all(color: kGrey.withOpacity(0.2)),
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(14),
                     ),

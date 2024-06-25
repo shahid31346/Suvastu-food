@@ -25,13 +25,15 @@ class HomeController extends GetxController {
   var apiKey = Constants.googleMapsApiKey; // Google Maps Services Api key
 
   ///Get current location
-  Future<void> getCurrentLocation(bool isFromSetLocation) async {
+  Future<void> getCurrentLocation() async {
+    print('1');
     try {
       if (!kIsWeb) {
         Future.delayed(const Duration(milliseconds: 200)).then((val) {
           locationLoader.value = true;
         });
       }
+      print('2');
 
       // Check if location services are already enabled
       LocationPermission permission = await Geolocator.checkPermission();
@@ -39,60 +41,69 @@ class HomeController extends GetxController {
       if (permission == LocationPermission.always ||
           permission == LocationPermission.whileInUse) {
       } else if (permission == LocationPermission.deniedForever) {
+        ScaffoldMessenger.of(Get.overlayContext!).showSnackBar(
+          SnackBar(
+            content: TextButton(
+              child: Text(
+                "Alert! Location permission denied. Click here to open setting"
+                    .tr,
+                style: TextStyle(color: Colors.white),
+              ),
+              onPressed: () {
+                Geolocator.openAppSettings();
+              },
+            ),
+          ),
+        );
+
         permission = await Geolocator.requestPermission();
         locationLoader.value = false;
-
-        if (!kIsWeb) {
-          if (isFromSetLocation == true)
-            ScaffoldMessenger.of(Get.overlayContext!).showSnackBar(
-              SnackBar(
-                content: TextButton(
-                  child: Text(
-                    "Alert! Location permission denied. Click here to open setting"
-                        .tr,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Geolocator.openAppSettings();
-                  },
-                ),
-              ),
-            );
-        }
-        locationLoader.value = false;
-      } else if (permission == LocationPermission.denied) {
-        if (!kIsWeb) {
-          if (isFromSetLocation == true)
-            ScaffoldMessenger.of(Get.overlayContext!).showSnackBar(
-              SnackBar(
-                content: TextButton(
-                  child: Text(
-                    "Alert! Location permission denied. Click here to open setting"
-                        .tr,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Geolocator.openAppSettings();
-                  },
-                ),
-              ),
-            );
-        }
 
         // Request permission to access the device's location
         permission = await Geolocator.requestPermission();
 
         if (permission == LocationPermission.denied) {
+          print('4');
+
           locationLoader.value = false;
+          ScaffoldMessenger.of(Get.overlayContext!).showSnackBar(
+            SnackBar(
+              content: TextButton(
+                child: Text(
+                  "Alert! Location permission denied. Click here to open setting"
+                      .tr,
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Geolocator.openAppSettings();
+                },
+              ),
+            ),
+          );
         }
         locationLoader.value = false;
       } else {
         if (permission == LocationPermission.denied) {
           locationLoader.value = false;
+          ScaffoldMessenger.of(Get.overlayContext!).showSnackBar(
+            SnackBar(
+              content: TextButton(
+                child: Text(
+                  "Alert! Location permission denied. Click here to open setting"
+                      .tr,
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Geolocator.openAppSettings();
+                },
+              ),
+            ),
+          );
         }
         permission = await Geolocator.requestPermission();
         locationLoader.value = false;
       }
+      print('5');
 
       // Get the current position (latitude and longitude)
       Position position = await Geolocator.getCurrentPosition(
@@ -115,14 +126,17 @@ class HomeController extends GetxController {
                 '${Constants.googleMapsApiKey}${position.latitude},${position.longitude}&key=$apiKey';
             final response = await http.get(Uri.parse(url));
             String formattedAddress = '';
-
+            print('6');
             if (response.statusCode == 200) {
+              print('7');
+
               final decodedData = geocodingResponseFromJson(response.body);
               if (decodedData['results'] != null &&
                   decodedData['results'].isNotEmpty) {
                 formattedAddress =
                     decodedData['results'][0]['formatted_address'];
               }
+              print('8');
             }
             // Use formattedAddress when postalCode is empty
             currentPostCode.value = formattedAddress;

@@ -11,6 +11,7 @@ import 'package:suvastufood/user_side/controller/auth_controller/logout_contolle
 import 'package:suvastufood/user_side/controller/change_language_controller/change_language_controller.dart';
 import 'package:suvastufood/user_side/main_tabs.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_phone.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class GetStartedScreen extends StatefulWidget {
@@ -21,7 +22,8 @@ class GetStartedScreen extends StatefulWidget {
 }
 
 class _GetStartedScreenState extends State<GetStartedScreen> {
-  bool _switchValue = false;
+  ChangeLanguageController changeLanguageController =
+      Get.put(ChangeLanguageController());
 
   @override
   Widget build(BuildContext context) {
@@ -65,12 +67,37 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white.withOpacity(0.4),
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.white.withOpacity(0.3),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Icon(Icons.language, color: kWhite),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10.0, vertical: 8),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.language, color: kWhite),
+                                    SizedBox(
+                                      width: mQ.width * 0.02,
+                                    ),
+                                    Obx(() {
+                                      return changeLanguageController
+                                                  .selectedLanguage.value ==
+                                              'en'
+                                          ? Text(
+                                              'English',
+                                              style: TextStyle(
+                                                  color: kWhite,
+                                                  fontWeight: FontWeight.w600),
+                                            )
+                                          : Text(
+                                              'Urdu',
+                                              style: TextStyle(
+                                                  color: kWhite,
+                                                  fontWeight: FontWeight.w600),
+                                            );
+                                    }),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -171,7 +198,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                       height: mQ.height * 0.065,
                       child: CustomElevatedButton(
                         onPressed: () {
-                          // Get.back();
+                          Get.to(LoginWithPhoneScreen());
                         },
                         text: 'Continue with phone'.tr,
                         textColor: Colors.grey[600],

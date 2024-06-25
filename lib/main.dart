@@ -37,9 +37,7 @@ class MyApp extends StatelessWidget {
           Locale(appData.read('language') ?? 'en'), // Default locale is English
       fallbackLocale: Locale('en_US'), // Fallback locale is English
       debugShowCheckedModeBanner: false,
-      home: MainTabs(),
+      home: OnboardingScreen(),
     );
   }
 }
-
-////

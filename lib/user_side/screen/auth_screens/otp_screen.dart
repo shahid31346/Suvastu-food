@@ -55,14 +55,19 @@ class _OtpScreenState extends State<OtpScreen> {
                             padding: const EdgeInsets.only(
                               top: 12,
                             ),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: CircleButton(
-                                icon: Icons.arrow_back,
-                                onPressed: () {
-                                  Get.back();
-                                },
-                              ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                CircleButton(
+                                  icon: Icons.arrow_back,
+                                  onPressed: () {
+                                    Get.back();
+                                  },
+                                ),
+                                Text(
+                                  "Timer - 00:36",
+                                )
+                              ],
                             ),
                           ),
                           SizedBox(height: mQ.height * 0.015),

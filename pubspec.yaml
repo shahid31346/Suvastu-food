@@ -68,6 +68,8 @@ dependencies:
   flutter_svg: ^2.0.6
   #responsive
   responsive_builder: ^0.7.0
+  #rating star
+  smooth_star_rating_nsafe: ^1.0.0+1
 
 dev_dependencies:
   flutter_test:

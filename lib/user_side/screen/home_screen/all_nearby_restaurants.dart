@@ -181,13 +181,13 @@ class _AllNearbyRestaurantsState extends State<AllNearbyRestaurants> {
                                               children: [
                                                 Icon(
                                                   Iconsax.discount_circle5,
-                                                  color: Colors.red,
+                                                  color: kSecondaryMain,
                                                   size: 18,
                                                 ),
                                                 Text(
                                                   '  upto 10 % off'.tr,
                                                   style: TextStyle(
-                                                    color: Colors.red,
+                                                    color: kSecondaryMain,
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 12.5,
                                                   ),
@@ -390,7 +390,7 @@ class _AllNearbyRestaurantsState extends State<AllNearbyRestaurants> {
                                   ),
                                   Icon(
                                     Icons.my_location,
-                                    color: Colors.red,
+                                    color: kSecondaryMain,
                                     size: 22,
                                   )
                                 ],

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:suvastufood/user_side/screen/home_screen/all_nearby_restaurants.dart';
-import 'package:suvastufood/user_side/screen/home_screen/restaurnat_home.dart';
+import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_home.dart';
+
 import 'package:suvastufood/utils/const.dart';
 
 class NearbyRestaurants extends StatelessWidget {
@@ -164,13 +165,13 @@ class NearbyRestaurants extends StatelessWidget {
                                               children: [
                                                 Icon(
                                                   Iconsax.discount_circle5,
-                                                  color: Colors.red,
+                                                  color: kSecondaryMain,
                                                   size: 18,
                                                 ),
                                                 Text(
                                                   '  upto 10 % off'.tr,
                                                   style: TextStyle(
-                                                    color: Colors.red,
+                                                    color: kSecondaryMain,
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 12.5,
                                                   ),
@@ -373,7 +374,7 @@ class NearbyRestaurants extends StatelessWidget {
                                   ),
                                   Icon(
                                     Icons.my_location,
-                                    color: Colors.red,
+                                    color: kSecondaryMain,
                                     size: 22,
                                   )
                                 ],

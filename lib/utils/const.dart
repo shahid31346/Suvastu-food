@@ -5,6 +5,7 @@ bool loggedIn = false;
 
 var kdarkOrange = Color(0xFFa31300);
 var kPrimary = Color(0xFF03645D);
+var kSecondaryMain = Color(0xFFF86B6B);
 var kBgColor = Color(0xFFFFFFFF);
 var kthirdColor = Color(0xFF33424d);
 var khomeTitle = TextStyle(
@@ -219,23 +220,19 @@ const Color kSelectedMenuText = Color(0xFFFF8119);
 const double defaultPadding = 16;
 const accentColor = Color(0xFFcddafd);
 
-
-
-
-
 // //////////////
 // import 'package:flutter/material.dart';
 // import 'package:form_field_validator/form_field_validator.dart';
 
 // // clolors that we use in our app
- const titleColor = Color(0xFF010F07);
+const titleColor = Color(0xFF010F07);
 // const primaryColor = Color(0xFFffc8dd);
 // const accentColor = Color(0xFFcddafd);
 // const bodyTextColor = Color(0xFF868686);
 // const inputColor = Color(0xFFFBFBFB);
 
 // const double defaultPadding = 16;
- const Duration kDefaultDuration = Duration(milliseconds: 250);
+const Duration kDefaultDuration = Duration(milliseconds: 250);
 
 // const TextStyle kButtonTextStyle = TextStyle(
 //   color: Colors.white,
@@ -262,7 +259,7 @@ const accentColor = Color(0xFFcddafd);
 //   errorStyle: TextStyle(height: 0),
 // );
 
-// const kErrorBorderSide = BorderSide(color: Colors.red, width: 1);
+// const kErrorBorderSide = BorderSide(color: kSecondaryMain, width: 1);
 
 // // Validator
 // final passwordValidator = MultiValidator([
