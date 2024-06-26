@@ -15,7 +15,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  
+             
   await GetStorage.init();
   runApp(MyApp());
 }
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: kPrimary),
         useMaterial3: true,
-        fontFamily: 'Poppins',
+        fontFamily: 'Poppins',//
       ),
       translations: Languages(), // Language translations
       locale:
