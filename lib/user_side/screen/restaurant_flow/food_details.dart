@@ -4,7 +4,7 @@ import 'package:suvastufood/utils/const.dart';
 
 import 'components/info.dart';
 import 'components/required_section_title.dart';
-import 'components/rounded_checkedbox_list_tile.dart';
+import 'components/rounded_Radio_list_tile.dart';
 
 // ignore: must_be_immutable
 class FoodDetailsScreen extends StatefulWidget {
@@ -22,7 +22,6 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
 
   int numOfItems = 1;
   int quantity = 1;
-
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +60,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     const SizedBox(height: defaultPadding),
                     ...List.generate(
                       variety.length,
-                      (index) => RoundedCheckboxListTile(
+                      (index) => RoundedRadioListTile(
                         isActive: index == choiceOfTopCookie,
                         text: variety[index],
                         press: () {
@@ -76,7 +75,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     const SizedBox(height: defaultPadding),
                     ...List.generate(
                       choiceOfTopCookies.length,
-                      (index) => RoundedCheckboxListTile(
+                      (index) => RoundedRadioListTile(
                         isActive: index == choiceOfBottomCookie,
                         text: choiceOfTopCookies[index],
                         press: () {
@@ -88,7 +87,6 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     ),
                     const SizedBox(height: defaultPadding),
                     // // Num of item
-                 
                   ],
                 ),
               ),
@@ -117,7 +115,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
@@ -133,8 +131,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 12),
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
                           child: Text(numOfItems.toString().padLeft(2, "0"),
                               style: Theme.of(context).textTheme.titleLarge),
                         ),
@@ -169,8 +166,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       ),
                       child: PrimaryButton(
                         onPressed: () {},
-                        label:
-                            "${'Add to cart'} (Rs 12.25)",
+                        label: "${'Add to cart'} (Rs 12.25)",
                         elevation: 3,
                         bgColor: Theme.of(context).primaryColor,
                         labelStyle: TextStyle(

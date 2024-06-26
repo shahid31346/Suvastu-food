@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/firebase_options.dart';
 import 'package:suvastufood/user_side/main_tabs.dart';
+import 'package:suvastufood/user_side/screen/onboarding_screen/onboarding_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 import 'package:suvastufood/utils/translation.dart';
 
