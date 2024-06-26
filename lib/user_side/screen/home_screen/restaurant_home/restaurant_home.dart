@@ -179,16 +179,19 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
                     ),
                   ),
                 ),
-                AnimatedSlide(
-                  duration: const Duration(microseconds: 300),
-                  offset: Offset(percent < 0.1 ? -0.18 : 0.1, 0),
-                  curve: Curves.easeIn,
-                  child: Text(
-                    'Its Eatoo',
-                    style: khomeTitle.copyWith(
-                      color: kBlackColor,
-                      letterSpacing: 0.4,
-                      fontSize: 16,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: AnimatedSlide(
+                    duration: const Duration(microseconds: 300),
+                    offset: Offset(percent < 0.1 ? -0.18 : 0.1, 0),
+                    curve: Curves.easeIn,
+                    child: Text(
+                      'Its Eatoo',
+                      style: khomeTitle.copyWith(
+                        color: kBlackColor,
+                        letterSpacing: 0.4,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                 ),
