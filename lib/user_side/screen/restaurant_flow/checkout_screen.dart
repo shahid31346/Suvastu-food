@@ -29,147 +29,149 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: kWhite,
-                border: Border.all(
-                  width: 0.2,
-                  color: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .color!
-                      .withOpacity(0.2),
-                ),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    blurRadius: 8.0,
-                    spreadRadius: 0.0,
-                    offset: Offset(1.0, 1.0), // shadow direction: bottom right
-                  )
-                ],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(14.0),
-                child: Column(
-                  children: [
-                    checkoutListTileWidget('Total', '\$0.00'),
-                    checkoutListTileWidget('Tax', '\$0.00'),
-                    couponCodeTextField(),
-                    checkoutListTileWidget('Net Total', '\$0.00',
-                        isNetTotal: true),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: kWhite,
+                  border: Border.all(
+                    width: 0.2,
+                    color: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .color!
+                        .withOpacity(0.2),
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 8.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(1.0, 1.0), // shadow direction: bottom right
+                    )
                   ],
                 ),
-              ),
-            ),
-            SizedBox(
-              height: mQ.height * 0.03,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: kWhite,
-                border: Border.all(
-                  width: 0.2,
-                  color: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .color!
-                      .withOpacity(0.2),
+                child: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: Column(
+                    children: [
+                      checkoutListTileWidget('Total', '\$0.00'),
+                      checkoutListTileWidget('Tax', '\$0.00'),
+                      couponCodeTextField(),
+                      checkoutListTileWidget('Net Total', '\$0.00',
+                          isNetTotal: true),
+                    ],
+                  ),
                 ),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    blurRadius: 8.0,
-                    spreadRadius: 0.0,
-                    offset: Offset(1.0, 1.0), // shadow direction: bottom right
-                  )
-                ],
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  deliveryMethodWidget('Delivery'),
-                  if (_deliveryOption == 'Delivery') ...[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 14.0, vertical: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              'Township Swat Sector Aship Swat Sector sadasdasda sdsaSDFASDFASDFdasdaDA dA D asdA DASDsadsadasdasdsadasdasdA',
-                              style: TextStyle(fontSize: 12, color: kBlack54),
-                            ),
-                          ),
-                          SizedBox(
-                            height: mQ.height * 0.06,
-                            width: mQ.width * 0.2,
-                            child: TextButton(
-                              onPressed: () {
-                                // Handle edit action
-                              },
+              SizedBox(
+                height: mQ.height * 0.03,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: kWhite,
+                  border: Border.all(
+                    width: 0.2,
+                    color: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .color!
+                        .withOpacity(0.2),
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 8.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(1.0, 1.0), // shadow direction: bottom right
+                    )
+                  ],
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    deliveryMethodWidget('Delivery'),
+                    if (_deliveryOption == 'Delivery') ...[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 14.0, vertical: 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
                               child: Text(
-                                'Edit',
-                                style: TextStyle(color: kPrimary),
+                                'Township Swat Sector Aship Swat Sector sadasdasda sdsaSDFASDFASDFdasdaDA dA D asdA DASDsadsadasdasdsadasdasdA',
+                                style: TextStyle(fontSize: 12, color: kBlack54),
                               ),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              height: mQ.height * 0.06,
+                              width: mQ.width * 0.2,
+                              child: TextButton(
+                                onPressed: () {
+                                  // Handle edit action
+                                },
+                                child: Text(
+                                  'Edit',
+                                  style: TextStyle(color: kPrimary),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Divider(
+                        color: Colors.grey[200]!,
+                        height: 10,
                       ),
                     ),
+                    deliveryMethodWidget('Take Away'),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Divider(
+                        color: Colors.grey[200]!,
+                        height: 10,
+                      ),
+                    ),
+                    deliveryMethodWidget('Dine In'),
                   ],
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Divider(
-                      color: Colors.grey[200]!,
-                      height: 10,
-                    ),
-                  ),
-                  deliveryMethodWidget('Take Away'),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Divider(
-                      color: Colors.grey[200]!,
-                      height: 10,
-                    ),
-                  ),
-                  deliveryMethodWidget('Dine In'),
-                ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: mQ.height * 0.02,
-            ),
-            paymentMethodWidget(
-              title: _deliveryOption == 'Dine In'
-                  ? 'Cash by Hand'
-                  : 'Cash on Delivery',
-              icon: Iconsax.moneys,
-            ),
-            paymentMethodWidget(title: 'Credit Card', icon: Iconsax.card),
-            SizedBox(
-              height: mQ.height * 0.04,
-            ),
-            Center(
-              child: SizedBox(
-                width: mQ.width * 0.85,
-                height: 50,
-                child: ResuableButton(
-                    text: "Confirm".tr,
-                    onPressed: () {},
-                    color: kSecondaryMain),
+              SizedBox(
+                height: mQ.height * 0.02,
               ),
-            ),
-          ],
+              paymentMethodWidget(
+                title: _deliveryOption == 'Dine In'
+                    ? 'Cash by Hand'
+                    : 'Cash on Delivery',
+                icon: Iconsax.moneys,
+              ),
+              paymentMethodWidget(title: 'Credit Card', icon: Iconsax.card),
+              SizedBox(
+                height: mQ.height * 0.04,
+              ),
+              Center(
+                child: SizedBox(
+                  width: mQ.width * 0.85,
+                  height: 50,
+                  child: ResuableButton(
+                      text: "Confirm".tr,
+                      onPressed: () {},
+                      color: kSecondaryMain),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

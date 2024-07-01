@@ -7,9 +7,13 @@ import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/firebase_options.dart';
 import 'package:suvastufood/user_side/main_tabs.dart';
 import 'package:suvastufood/user_side/screen/onboarding_screen/onboarding_screen.dart';
+import 'package:suvastufood/user_side/screen/orders_screen/write_review_screen.dart';
 import 'package:suvastufood/user_side/screen/restaurant_flow/checkout_screen.dart';
+import 'package:suvastufood/user_side/screen/restaurant_flow/review_orders_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 import 'package:suvastufood/utils/translation.dart';
+
+import 'user_side/screen/auth_screens/password_change_success_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
           Locale(appData.read('language') ?? 'en'), // Default locale is English
       fallbackLocale: Locale('en_US'), // Fallback locale is English
       debugShowCheckedModeBanner: false,
-      home: CheckoutScreen(), 
+      home: PasswordChangeSuccessScreen(),
     );
   }
 }

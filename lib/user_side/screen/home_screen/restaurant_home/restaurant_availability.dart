@@ -34,10 +34,7 @@ class Availability extends StatelessWidget {
                 color: Colors.white,
                 border: Border.all(
                   width: 0.1,
-                  color: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .color!
+                  color: kGrey
                       .withOpacity(0.2),
                 ),
                 borderRadius: BorderRadius.circular(12),
