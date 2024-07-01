@@ -5,6 +5,7 @@ import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaur
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_availability.dart';
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_menu.dart';
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_review.dart';
+import 'package:suvastufood/user_side/screen/restaurant_flow/mycart_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class RestaurantHome extends StatefulWidget {
@@ -127,6 +128,12 @@ class _RestaurantHomeState extends State<RestaurantHome> {
           ),
         );
       }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.to(MyCartScreen());
+        },
+        child: Icon(Icons.shop),
+      ),
     );
   }
 }
