@@ -52,8 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 10,
+                 SizedBox(
+                  width: mQ.width * 0.02,
                 ),
                 Expanded(
                   child: Obx(
@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            expandedHeight: 180,
+            expandedHeight: 170,
             pinned: true,
             backgroundColor: Theme.of(context).primaryColor.withOpacity(0.8),
             flexibleSpace: FlexibleSpaceBar(
@@ -155,8 +155,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            height: 60,
+                           SizedBox(
+                            height: mQ.height * 0.12,
                           ),
                           Padding(
                             padding:
@@ -245,7 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TopCategory(),
-                          FoodCardList(),
+                          FoodForYou(),
                           NearbyRestaurants()
                         ],
                       ),

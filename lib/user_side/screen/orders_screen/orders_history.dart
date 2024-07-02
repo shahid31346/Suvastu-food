@@ -5,12 +5,12 @@ import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:suvastufood/utils/const.dart';
 
-class ActiveOrders extends StatefulWidget {
+class OrdersHistory extends StatefulWidget {
   @override
-  State<ActiveOrders> createState() => _ActiveOrdersState();
+  State<OrdersHistory> createState() => _OrdersHistoryState();
 }
 
-class _ActiveOrdersState extends State<ActiveOrders> {
+class _OrdersHistoryState extends State<OrdersHistory> {
   final List<String> categories = [
     'Local Food',
     'Fast Food',
@@ -29,7 +29,7 @@ class _ActiveOrdersState extends State<ActiveOrders> {
         itemBuilder: (context, index) {
           return Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: Container(
               decoration: BoxDecoration(
                 color: kWhite,
@@ -90,7 +90,7 @@ class _ActiveOrdersState extends State<ActiveOrders> {
                             children: [
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Fried Fish',
@@ -162,17 +162,17 @@ class _ActiveOrdersState extends State<ActiveOrders> {
                               width: 6,
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: Colors.yellow[700]!),
+                                  color: kPrimary),
                             ),
                             SizedBox(
                               width: mQ.width * 0.015,
                             ),
                             Text(
-                              'Active',
+                              'Completed',
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.yellow[700]!),
+                                  color: kPrimary),
                               textAlign: TextAlign.right,
                             ),
                           ],

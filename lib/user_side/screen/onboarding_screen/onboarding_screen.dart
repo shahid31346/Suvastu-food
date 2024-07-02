@@ -72,7 +72,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               width: mQ.width * 0.72,
               height: 50,
               child: ResuableButton(
-                  text: "Let's get stated to Khuraki".tr,
+                  text: "Let's get stated".tr,
                   onPressed: () {
                     // loginController.signupUser(context);
                     // final appData = GetStorage();

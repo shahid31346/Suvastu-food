@@ -24,7 +24,7 @@ class Reviews extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding:
-                const EdgeInsets.only(right: 16.0, left: 16.0, bottom: 16.0),
+                const EdgeInsets.only(right: 16.0, left: 16.0, bottom: 16.0,top: 10),
             child: Container(
               decoration: BoxDecoration(
                 color: kWhite,

@@ -166,7 +166,7 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
             child: Row(
               children: [
                 AnimatedOpacity(
-                  opacity: percent > 0.1 ? 1 : 0,
+                  opacity: percent > 0.09 ? 1 : 0,
                   duration: Duration(milliseconds: 300),
                   child: InkWell(
                     onTap: () {
@@ -190,7 +190,7 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
                   padding: const EdgeInsets.all(8.0),
                   child: AnimatedSlide(
                     duration: const Duration(microseconds: 300),
-                    offset: Offset(percent < 0.1 ? -0.18 : 0.1, 0),
+                    offset: Offset(percent < 0.09 ? -0.18 : 0.1, 0),
                     curve: Curves.easeIn,
                     child: Text(
                       'Its Eatoo',
@@ -203,35 +203,30 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
                   ),
                 ),
                 Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white.withOpacity(0.2)),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10.0, vertical: 6),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.star,
-                          color: Colors.yellow[800],
-                          size: 18,
-                        ),
-                        SizedBox(width: mQ.width * 0.01),
-                        Text("3.7",
-                            style: TextStyle(
-                              color: Colors.yellow[800],
-                            )),
-                      ],
-                    ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 10.0, vertical: 6),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow[800],
+                        size: 18,
+                      ),
+                      SizedBox(width: mQ.width * 0.01),
+                      Text("3.7",
+                          style: TextStyle(
+                            color: Colors.yellow[800],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          )),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-          const SizedBox(
-            height: 2,
-          ),
+
           Expanded(
             child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 400),
@@ -240,7 +235,7 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
                         children: [
                           Container(
                             padding: EdgeInsets.zero,
-                            color: Theme.of(context).scaffoldBackgroundColor,
+                            color: kWhite,
                             child: TabBar(
                               tabAlignment: TabAlignment.fill,
                               indicatorColor: kPrimary,
@@ -378,7 +373,8 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
                             ),
                             Container(
                               padding: EdgeInsets.zero,
-                              color: Theme.of(context).scaffoldBackgroundColor,
+                              color: kWhite,
+
                               child: TabBar(
                                 tabAlignment: TabAlignment.fill,
                                 indicatorColor: Colors.green,
@@ -400,7 +396,7 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 170;
+  double get maxExtent => 180;
 
   @override
   double get minExtent => 130;

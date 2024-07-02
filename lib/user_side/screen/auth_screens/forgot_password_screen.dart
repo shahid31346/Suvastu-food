@@ -11,7 +11,8 @@ import 'package:suvastufood/global/password_textfield.dart';
 import 'package:suvastufood/global/resuable_button.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/forgot_password_contrller.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/login_controller.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_email.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/otp_screen.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/register_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
@@ -73,7 +74,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           ),
                           SizedBox(height: mQ.height * 0.005),
                           Text(
-                            "Lets get started".tr,
+                            "Provide your email".tr,
                             style: TextStyle(
                               color: kGrey,
                               fontSize: 14,
@@ -105,12 +106,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               child: ResuableButton(
                                   text: "Send Code".tr,
                                   onPressed: () {
-                                    // loginController.signupUser(context);
-                                    // final appData = GetStorage();
-                                    // appData.write('logged_in', true);
-                                    // loggedIn = true;
 
-                                    // Get.offAll(Confirmation_screen());
+                                    Get.to(OtpScreen());
                                   },
                                   color: kPrimary),
                             ),

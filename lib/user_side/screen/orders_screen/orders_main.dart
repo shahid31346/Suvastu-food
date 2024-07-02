@@ -3,8 +3,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_email.dart';
 import 'package:suvastufood/user_side/screen/orders_screen/active_orders.dart';
+import 'package:suvastufood/user_side/screen/orders_screen/orders_history.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class OrdersMain extends StatefulWidget {
@@ -104,7 +105,7 @@ class _OrdersMainState extends State<OrdersMain>
                     controller: _tabController,
                     children: <Widget>[
                       ActiveOrders(),
-                      Container(),
+                      OrdersHistory(),
                     ],
                   ),
                 ),

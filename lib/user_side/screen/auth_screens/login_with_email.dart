@@ -15,14 +15,14 @@ import 'package:suvastufood/user_side/screen/auth_screens/forgot_password_screen
 import 'package:suvastufood/user_side/screen/auth_screens/register_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginWithEmailScreen extends StatefulWidget {
+  const LoginWithEmailScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginWithEmailScreen> createState() => _LoginWithEmailScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginWithEmailScreenState extends State<LoginWithEmailScreen> {
   bool passwordVisibility = false;
 
   LoginUserController loginUserController = Get.put(LoginUserController());
@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: kBgColor,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: mQ.height,
           child: Stack(
             children: [

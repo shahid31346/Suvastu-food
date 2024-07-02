@@ -179,6 +179,7 @@ class _AllFoodForYouState extends State<AllFoodForYou> {
                                     placeholder: (context, url) => Center(
                                       child: CupertinoActivityIndicator(
                                         color: kPrimary,
+                                        radius: 6,
                                       ),
                                     ),
                                     errorWidget: (context, url, error) =>
@@ -195,6 +196,7 @@ class _AllFoodForYouState extends State<AllFoodForYou> {
                                 style: TextStyle(
                                   fontSize: 14,
                                   color: kBlack54,
+                                  fontWeight: FontWeight.w600
                                 ),
                               ),
                             ],

@@ -214,7 +214,7 @@ const Color kGreen = Color(0xFF4CAF50);
 const Color kGray = Color(0xFFBDBEC1);
 const Color kGray1 = Color(0xFFEDEDEF);
 const Color kBlue1 = Color(0xFF337AB7);
-const Color kBackgroundColor = Color(0xFFF6F9FA);
+
 const Color kUnselectedMenuText = Color(0xFF454242);
 const Color kSelectedMenuText = Color(0xFFFF8119);
 const double defaultPadding = 16;

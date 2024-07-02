@@ -28,7 +28,7 @@ class Availability extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = availabilityItems[index];
           return Padding(
-            padding: const EdgeInsets.only(right: 16.0, left: 16.0, bottom: 16.0),
+            padding: const EdgeInsets.only(right: 16.0, left: 16.0, bottom: 16.0, top: 10),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,

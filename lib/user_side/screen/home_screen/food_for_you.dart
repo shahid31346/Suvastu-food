@@ -7,7 +7,7 @@ import 'package:suvastufood/user_side/screen/home_screen/all_food_for_you.dart';
 import 'package:suvastufood/user_side/screen/restaurant_flow/food_details.dart';
 import 'package:suvastufood/utils/const.dart';
 
-class FoodCardList extends StatelessWidget {
+class FoodForYou extends StatelessWidget {
   final List<String> categories = [
     'Local Food',
     'Fast Food',
@@ -23,7 +23,7 @@ class FoodCardList extends StatelessWidget {
       children: [
         Padding(
           padding:
-              const EdgeInsets.only(left: 14.0, right: 14, top: 5, bottom: 6.0),
+              const EdgeInsets.only(left: 14.0, right: 14, top: 10, bottom: 6.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -132,11 +132,11 @@ class FoodCardList extends StatelessWidget {
                               Row(
                                 children: [
                                   Icon(
-                                    Icons.schedule,
+                                    Iconsax.clock5,
                                     color: kWhite.withOpacity(0.8),
                                     size: 18,
                                   ),
-                                  SizedBox(width: mQ.width * 0.005),
+                                  SizedBox(width: mQ.width * 0.016),
                                   Text(
                                     '30-40 min'.tr,
                                     style: TextStyle(
@@ -152,9 +152,9 @@ class FoodCardList extends StatelessWidget {
                                 '\$300',
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  color: kWhite.withOpacity(0.8),
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 13,
+                                  color: kWhite,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
                                 ),
                               ),
                             ],

@@ -11,8 +11,9 @@ import 'package:suvastufood/global/password_textfield.dart';
 import 'package:suvastufood/global/resuable_button.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/login_controller.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/forgot_password_screen.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/register_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_email.dart';
+import 'package:suvastufood/user_side/screen/dialogs/password_changed_dialog.dart';
+
 import 'package:suvastufood/utils/const.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
@@ -115,12 +116,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                               child: ResuableButton(
                                   text: "Reset Password".tr,
                                   onPressed: () {
-                                    // loginController.signupUser(context);
-                                    // final appData = GetStorage();
-                                    // appData.write('logged_in', true);
-                                    // loggedIn = true;
-
-                                    // Get.offAll(Confirmation_screen());
+                                  passwordChangedDialog(context);
                                   },
                                   color: kPrimary),
                             ),

@@ -13,7 +13,7 @@ import 'package:suvastufood/global/resuable_button.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/forgot_password_contrller.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/login_controller.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/register_controller.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_email.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/register_screen.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/reset_password_screen.dart';
 import 'package:suvastufood/utils/const.dart';

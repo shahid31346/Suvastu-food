@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:smooth_star_rating_nsafe/smooth_star_rating.dart';
 import 'package:suvastufood/global/resuable_button.dart';
-import 'package:suvastufood/user_side/screen/restaurant_flow/order_sucess_dialog.dart';
+import 'package:suvastufood/user_side/screen/dialogs/order_success_dialog.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class WriteReviewScreen extends StatefulWidget {

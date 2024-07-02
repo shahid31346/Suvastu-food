@@ -4,7 +4,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:suvastufood/global/circle_button.dart';
 import 'package:suvastufood/global/resuable_button.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_email.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class PasswordChangeSuccessScreen extends StatefulWidget {

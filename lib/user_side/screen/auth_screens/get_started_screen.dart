@@ -10,7 +10,7 @@ import 'package:suvastufood/global/elevated_button.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/logout_contoller.dart';
 import 'package:suvastufood/user_side/controller/change_language_controller/change_language_controller.dart';
 import 'package:suvastufood/user_side/main_tabs.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_email.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_with_phone.dart';
 import 'package:suvastufood/utils/const.dart';
 
@@ -35,7 +35,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
         decoration: BoxDecoration(
           image: DecorationImage(
             colorFilter: ColorFilter.mode(
-              kOrange.withOpacity(0.2), // Apply blend color
+              kBlackColor.withOpacity(0.6), // Apply blend color
               BlendMode.softLight,
             ),
             opacity: 0.6,
@@ -68,7 +68,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: Colors.white.withOpacity(0.3),
+                                color: Colors.white.withOpacity(0.2),
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
@@ -96,6 +96,10 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                                                   fontWeight: FontWeight.w600),
                                             );
                                     }),
+                                    SizedBox(
+                                      width: mQ.width * 0.02,
+                                    ),
+                                    Icon(Icons.keyboard_arrow_down_sharp, color: kWhite),
                                   ],
                                 ),
                               ),
@@ -121,7 +125,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                             child: Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.white.withOpacity(0.4),
+                                color: Colors.white.withOpacity(0.2),
                               ),
                               child: Padding(
                                   padding: const EdgeInsets.all(12.0),
@@ -157,7 +161,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Signup or Login".tr,
+                      "Get started with Khuraki".tr,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 22,
@@ -181,7 +185,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                       height: mQ.height * 0.065,
                       child: CustomElevatedButton(
                         onPressed: () {
-                          Get.to(LoginScreen());
+                          Get.to(LoginWithEmailScreen());
                           //Get.back();
                           // Get.toNamed(AppRoutes.emailLogin);
                         },

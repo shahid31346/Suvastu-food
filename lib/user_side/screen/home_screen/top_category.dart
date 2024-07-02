@@ -9,7 +9,7 @@ class TopCategory extends StatelessWidget {
   final List<String> categories = [
     'Local Food',
     'Fast Food',
-    'Dessert',
+    'Dessert for you',
     'Drinks'
   ];
 
@@ -23,7 +23,7 @@ class TopCategory extends StatelessWidget {
         // Top Category
         Padding(
           padding:
-              const EdgeInsets.only(left: 14.0, right: 14, top: 5, bottom: 0.0),
+              const EdgeInsets.only(left: 14.0, right: 14, top: 12, bottom: 0.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

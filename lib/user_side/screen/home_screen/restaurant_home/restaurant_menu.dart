@@ -38,7 +38,7 @@ class _MenuState extends State<Menu> {
                 },
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 4),
+                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                   child: Column(
                     children: [
                       Container(

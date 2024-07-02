@@ -14,7 +14,7 @@ import 'package:suvastufood/global/password_textfield.dart';
 import 'package:suvastufood/global/resuable_button.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/login_controller.dart';
 import 'package:suvastufood/user_side/controller/auth_controller/register_controller.dart';
-import 'package:suvastufood/user_side/screen/auth_screens/login_screen.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/login_with_email.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/otp_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
@@ -266,7 +266,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           TextStyle(color: Color(0XFF68B39F)),
                                     ),
                                     onPressed: () {
-                                      Get.to(() => LoginScreen());
+                                      Get.to(() => LoginWithEmailScreen());
                                       FocusScope.of(context).unfocus();
                                     },
                                   ),

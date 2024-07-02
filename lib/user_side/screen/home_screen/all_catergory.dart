@@ -130,7 +130,7 @@ class _AllCategoryState extends State<AllCategory> {
                             item,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              color: Colors.white70,
+                              color: kWhite,
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                             ),
@@ -140,8 +140,9 @@ class _AllCategoryState extends State<AllCategory> {
                             '30+ Restaurant',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              color: Colors.white60,
-                              fontSize: 12,
+                              color: kWhite.withOpacity(0.8),
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.5,
                             ),
                           ),
                         ],

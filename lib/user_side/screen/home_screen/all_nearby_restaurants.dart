@@ -151,7 +151,7 @@ class _AllNearbyRestaurantsState extends State<AllNearbyRestaurants> {
                                     child: Image.asset(
                                       "assets/food2.png", // Replace with your image asset path
                                       fit: BoxFit.cover,
-                                      height: mQ.height * 0.215,
+                                      height: mQ.height * 0.19,
                                       width: mQ.width,
                                     ),
                                   ),
@@ -251,7 +251,9 @@ class _AllNearbyRestaurantsState extends State<AllNearbyRestaurants> {
                                               SizedBox(width: mQ.width * 0.02),
                                               Text("Khuraki",
                                                   style:
-                                                      TextStyle(color: kWhite)),
+                                                  TextStyle( color: kWhite,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 14,)),
                                             ],
                                           ),
                                         ),
@@ -273,10 +275,12 @@ class _AllNearbyRestaurantsState extends State<AllNearbyRestaurants> {
                                                   size: 18,
                                                 ),
                                                 SizedBox(
-                                                    width: mQ.width * 0.01),
+                                                    width: mQ.width * 0.015),
                                                 Text("3.7",
                                                     style: TextStyle(
                                                       color: Colors.yellow[800],
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 14,
                                                     )),
                                               ],
                                             ),
