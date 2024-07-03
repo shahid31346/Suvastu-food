@@ -16,12 +16,17 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final ChatController chatController = Get.put(ChatController());
+  final ValueNotifier<bool> galleryToggle = ValueNotifier(false);
 
   final List<Message> messages = [
     Message(
         content: "Hello !Hel industry's sello!",
         isSent: true,
         messageType: MessageType.text),
+    Message(
+        content: "I'm doing welhas been the industry's standard dl too!",
+        isSent: true,
+        messageType: MessageType.voice),
     Message(
         content: "Hi ther Hello!e!",
         isSent: false,
@@ -36,10 +41,22 @@ class _ChatScreenState extends State<ChatScreen> {
         isSent: false,
         messageType: MessageType.text),
     Message(
+        content: "I'm doing welhas been the industry's standard dl too!",
+        isSent: true,
+        messageType: MessageType.voice),
+    Message(
         content:
             "What aboutem Ipsum ummy text ever since the 1500s,Lorem Ipsu you?",
         isSent: false,
         messageType: MessageType.text),
+    Message(
+        content: "I'm doing welhas been the industry's standard dl too!",
+        isSent: true,
+        messageType: MessageType.voice),
+    Message(
+        content: "I'm doing welhas been the industry's standard dl too!",
+        isSent: true,
+        messageType: MessageType.voice),
     Message(
         content: "I'm doing welhas been the industry's standard dl too!",
         isSent: true,
@@ -87,10 +104,19 @@ class _ChatScreenState extends State<ChatScreen> {
                                 right: 16.0, left: 16.0, top: 5, bottom: 5),
                             child: SizedBox(
                               child: VoiceMessageView(
+                                circlesTextStyle:
+                                    TextStyle(color: kBlackColor, fontSize: 10),
+                                counterTextStyle:
+                                    TextStyle(color: kWhite, fontSize: 12),
                                 size: 23,
                                 cornerRadius: 14,
                                 innerPadding: 10,
-                                circlesColor: kSecondaryColor,
+                                playIcon: Icon(
+                                  Icons.play_arrow,
+                                  size: 22,
+                                  color: kBlackColor,
+                                ),
+                                circlesColor: kWhite,
                                 activeSliderColor: kWhite,
                                 notActiveSliderColor: Colors.transparent,
                                 backgroundColor: kPrimary,
@@ -126,10 +152,19 @@ class _ChatScreenState extends State<ChatScreen> {
                                     right: 16.0, left: 16.0, top: 5, bottom: 5),
                                 child: SizedBox(
                                   child: VoiceMessageView(
+                                    circlesTextStyle:
+                                        TextStyle(color: kWhite, fontSize: 10),
+                                    counterTextStyle:
+                                        TextStyle(color: kWhite, fontSize: 12),
                                     size: 23,
                                     cornerRadius: 14,
                                     innerPadding: 8,
-                                    circlesColor: kSecondaryColor,
+                                    playIcon: Icon(
+                                      Icons.play_arrow,
+                                      size: 22,
+                                      color: kWhite,
+                                    ),
+                                    circlesColor: kGrey.withOpacity(0.8),
                                     activeSliderColor: kWhite,
                                     notActiveSliderColor: Colors.transparent,
                                     backgroundColor: kGrey.withOpacity(0.27),
@@ -161,140 +196,139 @@ class _ChatScreenState extends State<ChatScreen> {
               },
             ),
           ),
-          ValueListenableBuilder(
-            valueListenable: chatController.messageTextController,
-            builder: (context, value, child) {
-              final text = value.text;
-              return Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10),
-                child: TextFormField(
-                  controller: chatController.messageTextController,
-                  focusNode: chatController.focusNode,
-                  // uncomment to set max length
-                  // maxLength: 1000,
-                  maxLines: 4,
-                  minLines: 1,
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 0.3),
-                  decoration: InputDecoration(
-                    prefixIcon: IconButton(
-                      padding: EdgeInsets.zero,
-                      icon: Icon(
-                        Iconsax.gallery,
-                        size: 20,
-
-                        // color: foregroundColor,
-                      ),
-                      onPressed: () {},
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.grey[300]!, width: 0.5),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: kPrimary, width: 0.5),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    fillColor: kWhite,
-                    filled: true,
-                    isDense: true,
-                    hintText: "Type message...",
-                    border: InputBorder.none,
-                    hintStyle: TextStyle(color: Colors.white54),
-                    suffixIcon: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      child: text.isEmpty
-                          ? Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              mainAxisSize: MainAxisSize.min,
+          ValueListenableBuilder<bool>(
+            valueListenable: galleryToggle,
+            builder: (context, isGalleryOpen, child) {
+              return Column(
+                children: [
+                  if (isGalleryOpen)
+                    Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 1),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Obx(() {
-                                  return GestureDetector(
-                                    child: Icon(
-                                      Icons.mic,
-                                      size: 27,
-                                      color:
-                                          chatController.isVoiceRecording.value
-                                              ? Colors.red
-                                              : kPrimary,
-                                    ),
-                                    onLongPress: () async {
-                                      // var audioPlayer = AudioPlayer();
-                                      // await audioPlayer
-                                      //     .play(AssetSource("Notification.mp3"));
-                                      // audioPlayer.onPlayerComplete.listen((a) {
-                                      //   chatController.start.value =
-                                      //       DateTime.now();
-                                      print("okayasdsdasdasdasdsad");
-                                      // chatController.startRecord();
-                                      // chatController.isRecording.value = true;
-                                      // });
-                                    },
-                                    onLongPressEnd: (details) {
-                                      // chatController.stopRecord(
-                                      //   firebaseAuth.currentUser!.email!,
-                                      //   widget.userEmail,
-                                      // );
-                                    },
-                                  );
-                                }),
+                                IconButton(
+                                  padding: EdgeInsets.zero,
+                                  icon: Icon(
+                                    Iconsax.camera,
+                                    size: 20,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                                Text('Camera')
                               ],
-                            )
-                          : IconButton(
-                              icon: const Icon(
-                                Icons.send_outlined,
-                                size: 27,
-
-                                // color: foregroundColor,
+                            ),
+                            SizedBox(
+                              width: mQ.width * 0.03,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                IconButton(
+                                  padding: EdgeInsets.zero,
+                                  icon: Icon(
+                                    Iconsax.gallery,
+                                    size: 20,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                                Text('Gallery')
+                              ],
+                            ),
+                          ],
+                        )),
+                  ValueListenableBuilder(
+                    valueListenable: chatController.messageTextController,
+                    builder: (context, value, child) {
+                      final text = value.text;
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12.0, vertical: 10),
+                        child: TextFormField(
+                          controller: chatController.messageTextController,
+                          focusNode: chatController.focusNode,
+                          maxLines: 4,
+                          minLines: 1,
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              letterSpacing: 0.3),
+                          decoration: InputDecoration(
+                            prefixIcon: IconButton(
+                              padding: EdgeInsets.zero,
+                              icon: Icon(
+                                Iconsax.gallery,
+                                size: 20,
                               ),
                               onPressed: () {
-                                print(
-                                  "userEmail",
-                                );
-
-                                print(
-                                  "userEtmail",
-                                );
+                                galleryToggle.value = !galleryToggle.value;
                               },
                             ),
-                    ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.grey[300]!, width: 0.5),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: kPrimary, width: 0.5),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            fillColor: kWhite,
+                            filled: true,
+                            isDense: true,
+                            hintText: "Type message...",
+                            border: InputBorder.none,
+                            hintStyle: TextStyle(color: kGrey, fontSize: 14),
+                            suffixIcon: AnimatedSwitcher(
+                              duration: const Duration(milliseconds: 300),
+                              child: text.isEmpty
+                                  ? Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Obx(() {
+                                          return GestureDetector(
+                                            child: Icon(
+                                              Icons.mic,
+                                              size: 27,
+                                              color: chatController
+                                                      .isVoiceRecording.value
+                                                  ? Colors.red
+                                                  : kPrimary,
+                                            ),
+                                            onLongPress: () async {
+                                              print("Recording started");
+                                            },
+                                            onLongPressEnd: (details) {
+                                              print("Recording stopped");
+                                            },
+                                          );
+                                        }),
+                                      ],
+                                    )
+                                  : IconButton(
+                                      icon: const Icon(
+                                        Icons.send_outlined,
+                                        size: 27,
+                                      ),
+                                      onPressed: () {
+                                        print("Message sent");
+                                      },
+                                    ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                ),
+                ],
               );
             },
-          )
-          // Padding(
-          //   padding: const EdgeInsets.all(14.0),
-          //   child: Row(
-          //     children: [
-          //       Expanded(
-          //         child: AuthTextField(
-          //           prefixIcon: Icons.message_outlined,
-          //           controller: _controller,
-          //           inputType: TextInputType.name,
-          //           hintText: 'Type a message'.tr,
-          //           autofillHints: const [AutofillHints.email],
-          //         ),
-          //       ),
-          //       IconButton(
-          //         icon: Icon(
-          //           CupertinoIcons.arrow_right_circle_fill,
-          //           size: 30,
-          //           color: kPrimary,
-          //         ),
-          //         onPressed: () {
-          //           // Add logic to send a message
-          //           // For now, clear the text field
-          //           _controller.clear();
-          //         },
-          //       ),
-          //     ],
-          //   ),
-          // )
+          ),
         ],
       ),
     );
