@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:suvastufood/global/resuable_button.dart';
+import 'package:suvastufood/user_side/screen/restaurant_flow/checkout_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class MyCartScreen extends StatefulWidget {
@@ -314,7 +316,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
           ),
 
           Positioned.fill(
-            bottom: 5,
+            bottom: 12,
 
             child: Align(
               alignment: Alignment.bottomCenter,
@@ -324,6 +326,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 child: ResuableButton(
                     text: "Confirm".tr,
                     onPressed: () {
+
+                      Get.to(CheckoutScreen());
                     },
                     color: kSecondaryMain),
               ),

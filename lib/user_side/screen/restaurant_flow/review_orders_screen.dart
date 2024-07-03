@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
 import 'package:suvastufood/global/resuable_button.dart';
 import 'package:suvastufood/user_side/screen/dialogs/cancel_order_dialog.dart';
+import 'package:suvastufood/user_side/screen/dialogs/order_success_dialog.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class ReviewOrdersScreen extends StatefulWidget {
@@ -386,8 +387,9 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                   width: mQ.width * 0.85,
                   height: 50,
                   child: ResuableButton(
-                      text: "Confirm".tr,
+                      text: "Cancel Order".tr,
                       onPressed: () {
+
                         showCancelOrderDialog(context);
                       },
                       color: kSecondaryMain),

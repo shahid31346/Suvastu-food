@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
@@ -129,10 +130,11 @@ class _RestaurantHomeState extends State<RestaurantHome> {
         );
       }),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: kSecondaryMain,
         onPressed: () {
           Get.to(MyCartScreen());
         },
-        child: Icon(Icons.shop),
+        child: Icon(CupertinoIcons.cart, color: kWhite, ),
       ),
     );
   }

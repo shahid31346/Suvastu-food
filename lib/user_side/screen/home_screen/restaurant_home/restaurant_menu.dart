@@ -22,7 +22,7 @@ class _MenuState extends State<Menu> {
       children: [
         SizedBox(
           width: double.infinity,
-          height: mQ.height * 0.06,
+          height:70,
           child: ListView.builder(
             padding: EdgeInsets.zero,
             shrinkWrap: true,

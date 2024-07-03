@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/firebase_options.dart';
 import 'package:suvastufood/user_side/main_tabs.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/get_started_screen.dart';
 import 'package:suvastufood/user_side/screen/deals_screens/deals_screen.dart';
 import 'package:suvastufood/user_side/screen/onboarding_screen/onboarding_screen.dart';
 import 'package:suvastufood/user_side/screen/orders_screen/write_review_screen.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
       fallbackLocale: Locale('en_US'), // Fallback locale is English
       debugShowCheckedModeBanner: false,
 
-      home: ProfileScreen(),
+      home: OnboardingScreen(),
 
     );
   }

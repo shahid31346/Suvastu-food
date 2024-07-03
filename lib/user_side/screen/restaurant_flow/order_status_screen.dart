@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:suvastufood/global/resuable_button.dart';
+import 'package:suvastufood/user_side/screen/restaurant_flow/review_orders_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
 
@@ -406,8 +407,10 @@ class _OrderStatusScreenState extends State<OrderStatusScreen> {
                       width: mQ.width * 0.85,
                       height: 50,
                       child: ResuableButton(
-                          text: "Confirm".tr,
+                          text: "View Order Details".tr,
                           onPressed: () {
+
+                            Get.to(ReviewOrdersScreen());
                           },
                           color: kSecondaryMain),
                     ),
