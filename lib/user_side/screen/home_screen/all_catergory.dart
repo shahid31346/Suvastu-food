@@ -37,7 +37,7 @@ class _AllCategoryState extends State<AllCategory> {
         centerTitle: true,
         title: Text(
           'Categories'.tr,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
       body: ResponsiveBuilder(

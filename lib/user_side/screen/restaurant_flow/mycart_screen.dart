@@ -37,7 +37,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
         centerTitle: true,
         title: Text(
           'My Cart'.tr,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
         actions: [
           Padding(

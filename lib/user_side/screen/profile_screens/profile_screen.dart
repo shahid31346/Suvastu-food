@@ -3,8 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:suvastufood/global/resuable_button.dart';
+import 'package:suvastufood/user_side/screen/profile_screens/card_screen.dart';
 import 'package:suvastufood/user_side/screen/profile_screens/edit_profile_screen.dart';
+import 'package:suvastufood/user_side/screen/profile_screens/my_address_screen.dart';
 import 'package:suvastufood/user_side/screen/profile_screens/setting_screen.dart';
+import 'package:suvastufood/user_side/screen/profile_screens/setting_screens/chat_screen/chat_screen.dart';
+import 'package:suvastufood/user_side/screen/profile_screens/setting_screens/chat_screen/recieved_message.dart';
 import 'package:suvastufood/utils/const.dart';
 
 
@@ -26,7 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         centerTitle: true,
         title: Text(
           'Profile'.tr,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
       body: SingleChildScrollView(
@@ -162,9 +166,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               ListTileWidget(
                 context,
+                icon: Icons.credit_card_sharp,
+                text: 'Card',
+            onListPressed: (){
+                  Get.to(CardScreen());
+                  }
+
+              ),
+              ListTileWidget(
+                context,
                 icon: Icons.chat,
                 text: 'Chat',
-
+                onListPressed: (){
+                  Get.to(ChatScreen());
+                }
 
               ),
               ListTileWidget(
@@ -172,6 +187,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 context,
                 icon: Icons.location_on,
                 text: 'My Address',
+                  onListPressed: (){
+                    Get.to(MyAddressScreen());
+                  }
 
 
               ),

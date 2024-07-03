@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
+import 'package:suvastufood/user_side/screen/dialogs/account_delete_dialog.dart';
+import 'package:suvastufood/user_side/screen/profile_screens/setting_screens/privacy_policy_screen.dart';
+import 'package:suvastufood/user_side/screen/profile_screens/setting_screens/terms_and_condition_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -21,7 +25,7 @@ class _SettingScreenState extends State<SettingScreen> {
         centerTitle: true,
         title: Text(
           'Setting'.tr,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
       body: SingleChildScrollView(
@@ -30,8 +34,8 @@ class _SettingScreenState extends State<SettingScreen> {
           child: Column(
             children: [
               ListTileWidget(context, text: 'Language', onListPressed: (){}),
-              ListTileWidget(context, text: 'Term & Conditions', onListPressed: (){}),
-              ListTileWidget(context, text: 'Privacy Policy', onListPressed: (){}),
+              ListTileWidget(context, text: 'Term & Conditions', onListPressed: (){Get.to(TermsAndConditionsScreen());}),
+              ListTileWidget(context, text: 'Privacy Policy', onListPressed: (){Get.to(PrivacyPolicyScreen());}),
               ListTileWidget(context, text: 'Rate Us', onListPressed: (){}),
               ListTileWidget(context, text: 'Share App', onListPressed: (){}),
               ListTileWidget(context, text: 'About', onListPressed: (){}),
@@ -40,7 +44,9 @@ class _SettingScreenState extends State<SettingScreen> {
                   Expanded(
 
                     child: InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        accountDeleteDialog(context);
+                      },
                       child: Text(
 
                         "Delete Account".tr,

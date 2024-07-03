@@ -27,9 +27,9 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
       appBar: AppBar(
         backgroundColor: kBgColor,
         centerTitle: true,
-        title: Text(
+        title: Text( 
           'Review Order'.tr,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
       body: SingleChildScrollView(

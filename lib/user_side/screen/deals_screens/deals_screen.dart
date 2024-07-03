@@ -34,7 +34,7 @@ class _DealsScreenState extends State<DealsScreen> {
             centerTitle: true,
             title: Text(
               'Best Deals'.tr,
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
             ),
             bottom: PreferredSize(
               preferredSize:

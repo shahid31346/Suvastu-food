@@ -28,7 +28,7 @@ class _AllFoodForYouState extends State<AllFoodForYou> {
         centerTitle: true,
         title: Text(
           'Food for you'.tr,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
       body: ListView.builder(

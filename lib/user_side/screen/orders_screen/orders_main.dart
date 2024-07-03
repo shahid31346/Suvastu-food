@@ -35,7 +35,7 @@ class _OrdersMainState extends State<OrdersMain>
         backgroundColor: kBgColor,
         title: Text(
           "Orders".tr,
-          style: TextStyle(color: Colors.black87, fontSize: 20),
+          style: TextStyle(color: Colors.black87, fontSize: 20, fontWeight: FontWeight.w600),
         ),
       ),
       body: DefaultTabController(

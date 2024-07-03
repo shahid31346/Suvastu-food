@@ -33,7 +33,7 @@ class _AllNearbyRestaurantsState extends State<AllNearbyRestaurants> {
             centerTitle: true,
             title: Text(
               'Restaurants'.tr,
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
             ),
             bottom: PreferredSize(
               preferredSize:

@@ -24,7 +24,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
         centerTitle: true,
         title: Text(
           'Write Review'.tr,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
       body: SingleChildScrollView(
