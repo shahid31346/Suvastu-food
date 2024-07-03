@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:suvastufood/global/resuable_button.dart';
+import 'package:suvastufood/user_side/main_tabs.dart';
 import 'package:suvastufood/utils/const.dart';
 
 void showOrderSuccessDialog(BuildContext context) {
@@ -52,7 +54,7 @@ void showOrderSuccessDialog(BuildContext context) {
                     Alignment.center,
                     child: Text(
 
-                      'Order Placed',
+                      'Order Placed Successfully',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,
@@ -108,9 +110,9 @@ void showOrderSuccessDialog(BuildContext context) {
                           width: mQ.width * 0.33,
                           height: 50,
                           child: ResuableButton(
-                              text: "Go Home".tr,
+                              text: "Home".tr,
                               onPressed: () {
-                                showOrderSuccessDialog(context);
+                                Get.offAll(MainTabs());
                               },
                               color: kSecondaryMain),
                         ),

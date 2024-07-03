@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:suvastufood/global/primary_button.dart';
 import 'package:suvastufood/global/resuable_button.dart';
+import 'package:suvastufood/user_side/screen/restaurant_flow/review_orders_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class CheckoutScreen extends StatefulWidget {
@@ -166,7 +167,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   height: 50,
                   child: ResuableButton(
                       text: "Confirm".tr,
-                      onPressed: () {},
+                      onPressed: () {
+
+                        Get.to(ReviewOrdersScreen());
+                      },
                       color: kSecondaryMain),
                 ),
               ),
@@ -250,7 +254,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             ),
             child: Center(
               child: PrimaryButton(
-                onPressed: () {},
+                onPressed: () {
+
+
+                },
                 label: "Apply",
                 elevation: 2,
                 bgColor: Theme.of(context).primaryColor,
