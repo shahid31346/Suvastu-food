@@ -23,12 +23,12 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
   @override
   Widget build(BuildContext context) {
     final mQ = MediaQuery.of(context).size;
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: kBgColor,
       appBar: AppBar(
         backgroundColor: kBgColor,
         centerTitle: true,
-        title: Text( 
+        title: Text(
           'Review Order'.tr,
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
@@ -39,7 +39,6 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               Container(
                 decoration: BoxDecoration(
                   color: kWhite,
@@ -57,21 +56,20 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                       color: Colors.grey.withOpacity(0.2),
                       blurRadius: 8.0,
                       spreadRadius: 0.0,
-                      offset: Offset(1.0, 1.0), // shadow direction: bottom right
+                      offset:
+                          Offset(1.0, 1.0), // shadow direction: bottom right
                     )
                   ],
                 ),
-                child:  Padding(
+                child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        mainAxisAlignment:
-                        MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-
                           Container(
                             decoration: BoxDecoration(
                               color: kGrey,
@@ -94,24 +92,40 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                             '22/8/2023',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
                           ),
                         ],
                       ),
-                      SizedBox(height:  mQ.height * 0.02,),
-                      Text(
-                        'Restaurant Address',
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
+                      SizedBox(
+                        height: mQ.height * 0.02,
                       ),
-                      SizedBox(height:  mQ.height * 0.005,),
+                      Row(
+                        children: [
+                          Icon(Icons.circle_rounded,
+                              size: 17, color: kDangerColor),
+                          SizedBox(
+                            width: mQ.width * 0.01,
+                          ),
+                          Text(
+                            'Pick-up Point',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: mQ.height * 0.005,
+                      ),
                       Row(
                         children: [
                           Expanded(
                             child: Text(
                               'Dewan hareem , Township f assasa sdfa sdadafsdfasdfasdfasdfsadfasdfsadf',
-
                               style: TextStyle(
                                 color: kBlackColor,
                                 fontWeight: FontWeight.w600,
@@ -121,7 +135,46 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height:  mQ.height * 0.02,),
+                      SizedBox(
+                        height: mQ.height * 0.02,
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.location_on_outlined,
+                              size: 17, color: kPrimary),
+                          SizedBox(
+                            width: mQ.width * 0.01,
+                          ),
+                          Text(
+                            'Pick-off Point',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: mQ.height * 0.005,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Township f assasa sdfa ',
+                              style: TextStyle(
+                                color: kBlackColor,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: mQ.height * 0.02,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -129,17 +182,23 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                             'Order type',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
                           ),
                           Text(
                             'Payment',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
                           ),
                         ],
                       ),
-                      SizedBox(height:  mQ.height * 0.005,),
+                      SizedBox(
+                        height: mQ.height * 0.005,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -163,13 +222,13 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                           ),
                         ],
                       ),
-
                     ],
                   ),
                 ),
-
               ),
-              SizedBox(height: mQ.height* 0.02,),
+              SizedBox(
+                height: mQ.height * 0.02,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
@@ -182,62 +241,76 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: mQ.height* 0.01,),
-        ListView.builder(
-          shrinkWrap: true,
-          primary: false,
-          itemCount: items.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        items[index]['name'],
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: kPrimary,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 12.5,
-                        ),
-                      ),
-                      Text(
-                        items[index]['price'],
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: kDangerColor,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 12.5,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: mQ.height * 0.002,),
-                  Text(
-                    'QTY: ${items[index]['quantity']}',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: kBlack54,
-                    ),
-                  ),
-                 // Adjust spacing as necessary
-                  SizedBox(height:  mQ.height * 0.005,),
-                  Divider(color: kGrey.withOpacity(0.2),),
-                  SizedBox(height:  mQ.height * 0.005,),
-                  SizedBox(height:  mQ.height * 0.005,),
-                ],
+              SizedBox(
+                height: mQ.height * 0.01,
               ),
-            );
-          }, 
-        ),
-              SizedBox(height: mQ.height* 0.02,),
-        Container(
+              ListView.builder(
+                shrinkWrap: true,
+                primary: false,
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              items[index]['name'],
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: kPrimary,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12.5,
+                              ),
+                            ),
+                            Text(
+                              items[index]['price'],
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: kDangerColor,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: mQ.height * 0.002,
+                        ),
+                        Text(
+                          'QTY: ${items[index]['quantity']}',
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: kBlack54,
+                          ),
+                        ),
+                        // Adjust spacing as necessary
+                        SizedBox(
+                          height: mQ.height * 0.005,
+                        ),
+                        Divider(
+                          color: kGrey.withOpacity(0.2),
+                        ),
+                        SizedBox(
+                          height: mQ.height * 0.005,
+                        ),
+                        SizedBox(
+                          height: mQ.height * 0.005,
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: mQ.height * 0.02,
+              ),
+              Container(
                 decoration: BoxDecoration(
                   color: kWhite,
                   border: Border.all(
@@ -254,11 +327,12 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                       color: Colors.grey.withOpacity(0.2),
                       blurRadius: 8.0,
                       spreadRadius: 0.0,
-                      offset: Offset(1.0, 1.0), // shadow direction: bottom right
+                      offset:
+                          Offset(1.0, 1.0), // shadow direction: bottom right
                     )
                   ],
                 ),
-                child:  Padding(
+                child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -271,17 +345,23 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                             'Sub Total',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
                           ),
                           Text(
                             'Discount',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
                           ),
                         ],
                       ),
-                      SizedBox(height:  mQ.height * 0.005,),
+                      SizedBox(
+                        height: mQ.height * 0.005,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -305,7 +385,9 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height:  mQ.height * 0.02,),
+                      SizedBox(
+                        height: mQ.height * 0.02,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -313,17 +395,23 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                             'Tax',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
                           ),
                           Text(
                             'Delivery amount',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: kBlack54),
                           ),
                         ],
                       ),
-                      SizedBox(height:  mQ.height * 0.005,),
+                      SizedBox(
+                        height: mQ.height * 0.005,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -347,11 +435,17 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height:  mQ.height * 0.01,),
-                              Divider(color: kGrey.withOpacity(0.3),),
-                      SizedBox(height:  mQ.height * 0.01,),
+                      SizedBox(
+                        height: mQ.height * 0.01,
+                      ),
+                      Divider(
+                        color: kGrey.withOpacity(0.3),
+                      ),
+                      SizedBox(
+                        height: mQ.height * 0.01,
+                      ),
                       Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             'Total',
@@ -373,11 +467,9 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                           ),
                         ],
                       ),
-
                     ],
                   ),
                 ),
-
               ),
               SizedBox(
                 height: mQ.height * 0.04,
@@ -389,7 +481,6 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                   child: ResuableButton(
                       text: "Cancel Order".tr,
                       onPressed: () {
-
                         showCancelOrderDialog(context);
                       },
                       color: kSecondaryMain),
@@ -401,5 +492,4 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
       ),
     );
   }
-
 }

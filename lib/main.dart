@@ -18,13 +18,12 @@ import 'package:suvastufood/user_side/screen/restaurant_flow/review_orders_scree
 import 'package:suvastufood/utils/const.dart';
 import 'package:suvastufood/utils/translation.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-             
+
   await GetStorage.init();
   runApp(MyApp());
 }
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: kPrimary),
         useMaterial3: true,
-        fontFamily: 'Poppins',//
+        fontFamily: 'Poppins', //
       ),
       translations: Languages(), // Language translations
       locale:
@@ -49,7 +48,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       home: OnboardingScreen(),
-
     );
   }
 }

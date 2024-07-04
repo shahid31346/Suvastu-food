@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:suvastufood/global/primary_button.dart';
 import 'package:suvastufood/global/resuable_button.dart';
+import 'package:suvastufood/user_side/screen/profile_screens/my_address_screen.dart';
 import 'package:suvastufood/user_side/screen/restaurant_flow/review_orders_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
@@ -53,7 +54,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       color: Colors.grey.withOpacity(0.2),
                       blurRadius: 8.0,
                       spreadRadius: 0.0,
-                      offset: Offset(1.0, 1.0), // shadow direction: bottom right
+                      offset:
+                          Offset(1.0, 1.0), // shadow direction: bottom right
                     )
                   ],
                 ),
@@ -90,7 +92,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       color: Colors.grey.withOpacity(0.2),
                       blurRadius: 8.0,
                       spreadRadius: 0.0,
-                      offset: Offset(1.0, 1.0), // shadow direction: bottom right
+                      offset:
+                          Offset(1.0, 1.0), // shadow direction: bottom right
                     )
                   ],
                 ),
@@ -108,7 +111,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           children: [
                             Expanded(
                               child: Text(
-                                'Township Swat Sector Aship Swat Sector sadasdasda sdsaSDFASDFASDFdasdaDA dA D asdA DASDsadsadasdasdsadasdasdA',
+                                'Township Swat Sector A, Khyber pukhtoon khwa, Pakistan',
                                 style: TextStyle(fontSize: 12, color: kBlack54),
                               ),
                             ),
@@ -117,7 +120,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               width: mQ.width * 0.2,
                               child: TextButton(
                                 onPressed: () {
-                                  // Handle edit action
+                                  Get.to(MyAddressScreen());
                                 },
                                 child: Text(
                                   'Edit',
@@ -168,7 +171,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   child: ResuableButton(
                       text: "Confirm".tr,
                       onPressed: () {
-
                         Get.to(ReviewOrdersScreen());
                       },
                       color: kSecondaryMain),
@@ -254,10 +256,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             ),
             child: Center(
               child: PrimaryButton(
-                onPressed: () {
-
-
-                },
+                onPressed: () {},
                 label: "Apply",
                 elevation: 2,
                 bgColor: Theme.of(context).primaryColor,
