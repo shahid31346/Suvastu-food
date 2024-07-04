@@ -30,7 +30,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
         centerTitle: true,
         title: Text( 
           'Review Order'.tr,
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
       body: SingleChildScrollView(
@@ -57,7 +57,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                       color: Colors.grey.withOpacity(0.2),
                       blurRadius: 8.0,
                       spreadRadius: 0.0,
-                      offset: Offset(1.0, 1.0), // shadow direction: bottom right
+                      offset: const Offset(1.0, 1.0), // shadow direction: bottom right
                     )
                   ],
                 ),
@@ -77,8 +77,8 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                               color: kGrey,
                               borderRadius: BorderRadius.circular(6),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
                                   vertical: 6.0, horizontal: 8),
                               child: Text(
                                 '#45456',
@@ -90,7 +90,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                               ),
                             ),
                           ),
-                          Text(
+                          const Text(
                             '22/8/2023',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -99,14 +99,14 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                         ],
                       ),
                       SizedBox(height:  mQ.height * 0.02,),
-                      Text(
+                      const Text(
                         'Restaurant Address',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             fontSize: 12, fontWeight: FontWeight.w500, color: kBlack54),
                       ),
                       SizedBox(height:  mQ.height * 0.005,),
-                      Row(
+                      const Row(
                         children: [
                           Expanded(
                             child: Text(
@@ -122,7 +122,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                         ],
                       ),
                       SizedBox(height:  mQ.height * 0.02,),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -140,7 +140,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                         ],
                       ),
                       SizedBox(height:  mQ.height * 0.005,),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -170,8 +170,8 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
 
               ),
               SizedBox(height: mQ.height* 0.02,),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
                   'Order Items',
                   overflow: TextOverflow.ellipsis,
@@ -208,7 +208,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                       Text(
                         items[index]['price'],
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: kDangerColor,
                           fontWeight: FontWeight.w600,
                           fontSize: 12.5,
@@ -220,7 +220,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                   Text(
                     'QTY: ${items[index]['quantity']}',
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: kBlack54,
@@ -254,7 +254,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                       color: Colors.grey.withOpacity(0.2),
                       blurRadius: 8.0,
                       spreadRadius: 0.0,
-                      offset: Offset(1.0, 1.0), // shadow direction: bottom right
+                      offset: const Offset(1.0, 1.0), // shadow direction: bottom right
                     )
                   ],
                 ),
@@ -264,7 +264,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -282,7 +282,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                         ],
                       ),
                       SizedBox(height:  mQ.height * 0.005,),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -306,7 +306,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                         ],
                       ),
                       SizedBox(height:  mQ.height * 0.02,),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -324,7 +324,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                         ],
                       ),
                       SizedBox(height:  mQ.height * 0.005,),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -350,7 +350,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                       SizedBox(height:  mQ.height * 0.01,),
                               Divider(color: kGrey.withOpacity(0.3),),
                       SizedBox(height:  mQ.height * 0.01,),
-                      Row(
+                      const Row(
                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -387,10 +387,10 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                   width: mQ.width * 0.85,
                   height: 50,
                   child: ResuableButton(
-                      text: "Cancel Order".tr,
+                      text: "Confirm & Go".tr,
                       onPressed: () {
 
-                        showCancelOrderDialog(context);
+                        showOrderSuccessDialog(context);
                       },
                       color: kSecondaryMain),
                 ),
