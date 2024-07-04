@@ -6,6 +6,7 @@ import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaur
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_availability.dart';
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_menu.dart';
 import 'package:suvastufood/user_side/screen/home_screen/restaurant_home/restaurant_review.dart';
+import 'package:suvastufood/user_side/screen/profile_screens/setting_screens/chat_screen/chat_screen.dart';
 import 'package:suvastufood/user_side/screen/restaurant_flow/mycart_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
@@ -68,17 +69,44 @@ class _RestaurantHomeState extends State<RestaurantHome> {
                       Positioned(
                         right: 16,
                         top: mQ.height * 0.05,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white.withOpacity(0.1)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.my_location,
-                              color: kWhite,
+                        child: Row(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Get.to(ChatScreen());
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.white.withOpacity(0.1)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Icon(
+                                    Icons.chat,
+                                    color: kWhite,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(
+                              width: mQ.width * 0.05,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.white.withOpacity(0.1)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Icon(
+                                    Icons.my_location,
+                                    color: kWhite,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Positioned(
@@ -134,7 +162,10 @@ class _RestaurantHomeState extends State<RestaurantHome> {
         onPressed: () {
           Get.to(MyCartScreen());
         },
-        child: Icon(CupertinoIcons.cart, color: kWhite, ),
+        child: Icon(
+          CupertinoIcons.cart,
+          color: kWhite,
+        ),
       ),
     );
   }
@@ -206,8 +237,8 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
                 ),
                 Spacer(),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6),
                   child: Row(
                     children: [
                       Icon(
@@ -228,7 +259,6 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
               ],
             ),
           ),
-
           Expanded(
             child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 400),
@@ -376,7 +406,6 @@ class HeaderSliver extends SliverPersistentHeaderDelegate {
                             Container(
                               padding: EdgeInsets.zero,
                               color: kWhite,
-
                               child: TabBar(
                                 tabAlignment: TabAlignment.fill,
                                 indicatorColor: Colors.green,

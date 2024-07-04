@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/user_side/screen/auth_screens/login_with_email.dart';
+import 'package:suvastufood/user_side/screen/deals_screens/deals_screen.dart';
 import 'package:suvastufood/user_side/screen/home_screen/home_screen.dart';
 import 'package:suvastufood/user_side/screen/orders_screen/orders_main.dart';
 import 'package:suvastufood/user_side/screen/profile_screens/profile_screen.dart';
@@ -31,7 +32,7 @@ class _MainTabsState extends State<MainTabs>
     HomeScreen(),
     OrdersMain(),
     MyCartScreen(),
-    LoginWithEmailScreen(),
+    DealsScreen(),
     ProfileScreen(),
   ];
   List<IconData> iconList = [

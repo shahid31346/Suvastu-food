@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:suvastufood/global/auth_textfield.dart';
 import 'package:suvastufood/user_side/controller/chat_controller/chat_controller.dart';
@@ -20,11 +21,13 @@ class _ChatScreenState extends State<ChatScreen> {
 
   final List<Message> messages = [
     Message(
-        content: "Hello !Hel industry's sello!",
+        content:
+            "Hello !Hel industs been the industry's standard dummy text ever since ry's sello!",
         isSent: true,
         messageType: MessageType.text),
     Message(
-        content: "I'm doing welhas been the industry's standard dl too!",
+        content:
+            "I'm doing welhas been the industry's s been the industry's standard dummy text ever since standard dl too!",
         isSent: true,
         messageType: MessageType.voice),
     Message(
@@ -72,6 +75,7 @@ class _ChatScreenState extends State<ChatScreen> {
   ];
 
   final TextEditingController _controller = TextEditingController();
+  final appData = GetStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -87,87 +91,43 @@ class _ChatScreenState extends State<ChatScreen> {
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
-      body: Column(
+      body: Stack(
         children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: messages.length,
-              itemBuilder: (context, index) {
-                final message = messages[index];
-                return message.messageType == MessageType.voice &&
-                        message.isSent == true
-                    ? Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(
-                                right: 16.0, left: 16.0, top: 5, bottom: 5),
-                            child: SizedBox(
-                              child: VoiceMessageView(
-                                circlesTextStyle:
-                                    TextStyle(color: kBlackColor, fontSize: 10),
-                                counterTextStyle:
-                                    TextStyle(color: kWhite, fontSize: 12),
-                                size: 23,
-                                cornerRadius: 14,
-                                innerPadding: 10,
-                                playIcon: Icon(
-                                  Icons.play_arrow,
-                                  size: 22,
-                                  color: kBlackColor,
-                                ),
-                                circlesColor: kWhite,
-                                activeSliderColor: kWhite,
-                                notActiveSliderColor: Colors.transparent,
-                                backgroundColor: kPrimary,
-                                controller: VoiceController(
-                                  audioSrc: message.content,
-                                  maxDuration: Duration(minutes: 1),
-                                  onComplete: () {
-                                    /// do something on complete
-                                  },
-                                  onPause: () {
-                                    /// do something on pause
-                                  },
-                                  onPlaying: () {
-                                    /// do something on playing
-                                  },
-                                  onError: (err) {
-                                    /// do somethin on error
-                                  },
-                                  isFile: false,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    : message.messageType == MessageType.voice &&
-                            message.isSent == false
+          Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: messages.length,
+                  itemBuilder: (context, index) {
+                    final message = messages[index];
+                    return message.messageType == MessageType.voice &&
+                            message.isSent == true
                         ? Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: appData.read('language') == 'ur'
+                                ? MainAxisAlignment.end
+                                : MainAxisAlignment.end,
                             children: [
                               Padding(
                                 padding: EdgeInsets.only(
                                     right: 16.0, left: 16.0, top: 5, bottom: 5),
                                 child: SizedBox(
                                   child: VoiceMessageView(
-                                    circlesTextStyle:
-                                        TextStyle(color: kWhite, fontSize: 10),
+                                    circlesTextStyle: TextStyle(
+                                        color: kBlackColor, fontSize: 10),
                                     counterTextStyle:
                                         TextStyle(color: kWhite, fontSize: 12),
                                     size: 23,
                                     cornerRadius: 14,
-                                    innerPadding: 8,
+                                    innerPadding: 10,
                                     playIcon: Icon(
                                       Icons.play_arrow,
                                       size: 22,
-                                      color: kWhite,
+                                      color: kBlackColor,
                                     ),
-                                    circlesColor: kGrey.withOpacity(0.8),
+                                    circlesColor: kWhite,
                                     activeSliderColor: kWhite,
                                     notActiveSliderColor: Colors.transparent,
-                                    backgroundColor: kGrey.withOpacity(0.27),
+                                    backgroundColor: kPrimary,
                                     controller: VoiceController(
                                       audioSrc: message.content,
                                       maxDuration: Duration(minutes: 1),
@@ -190,144 +150,223 @@ class _ChatScreenState extends State<ChatScreen> {
                               ),
                             ],
                           )
-                        : message.isSent
-                            ? SentMessageScreen(message: message.content)
-                            : ReceivedMessageScreen(message: message.content);
-              },
-            ),
-          ),
-          ValueListenableBuilder<bool>(
-            valueListenable: galleryToggle,
-            builder: (context, isGalleryOpen, child) {
-              return Column(
-                children: [
-                  if (isGalleryOpen)
-                    Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 1),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                IconButton(
-                                  padding: EdgeInsets.zero,
-                                  icon: Icon(
-                                    Iconsax.camera,
-                                    size: 20,
+                        : message.messageType == MessageType.voice &&
+                                message.isSent == false
+                            ? Row(
+                                mainAxisAlignment:
+                                    appData.read('language') == 'ur'
+                                        ? MainAxisAlignment.start
+                                        : MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        right: 16.0,
+                                        left: 16.0,
+                                        top: 5,
+                                        bottom: 5),
+                                    child: SizedBox(
+                                      child: VoiceMessageView(
+                                        circlesTextStyle: TextStyle(
+                                            color: kWhite, fontSize: 10),
+                                        counterTextStyle: TextStyle(
+                                            color: kWhite, fontSize: 12),
+                                        size: 23,
+                                        cornerRadius: 14,
+                                        innerPadding: 8,
+                                        playIcon: Icon(
+                                          Icons.play_arrow,
+                                          size: 22,
+                                          color: kWhite,
+                                        ),
+                                        circlesColor: kGrey.withOpacity(0.8),
+                                        activeSliderColor: kWhite,
+                                        notActiveSliderColor:
+                                            Colors.transparent,
+                                        backgroundColor:
+                                            kGrey.withOpacity(0.27),
+                                        controller: VoiceController(
+                                          audioSrc: message.content,
+                                          maxDuration: Duration(minutes: 1),
+                                          onComplete: () {
+                                            /// do something on complete
+                                          },
+                                          onPause: () {
+                                            /// do something on pause
+                                          },
+                                          onPlaying: () {
+                                            /// do something on playing
+                                          },
+                                          onError: (err) {
+                                            /// do somethin on error
+                                          },
+                                          isFile: false,
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                  onPressed: () {},
-                                ),
-                                Text('Camera')
-                              ],
-                            ),
-                            SizedBox(
-                              width: mQ.width * 0.03,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                IconButton(
+                                ],
+                              )
+                            : message.isSent
+                                ? SentMessageScreen(message: message.content)
+                                : ReceivedMessageScreen(
+                                    message: message.content);
+                  },
+                ),
+              ),
+              ValueListenableBuilder<bool>(
+                valueListenable: galleryToggle,
+                builder: (context, isGalleryOpen, child) {
+                  return Column(
+                    children: [
+                      ValueListenableBuilder(
+                        valueListenable: chatController.messageTextController,
+                        builder: (context, value, child) {
+                          final text = value.text;
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12.0, vertical: 10),
+                            child: TextFormField(
+                              controller: chatController.messageTextController,
+                              focusNode: chatController.focusNode,
+                              maxLines: 4,
+                              minLines: 1,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 0.3),
+                              decoration: InputDecoration(
+                                prefixIcon: IconButton(
                                   padding: EdgeInsets.zero,
                                   icon: Icon(
                                     Iconsax.gallery,
                                     size: 20,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    galleryToggle.value = !galleryToggle.value;
+                                  },
                                 ),
-                                Text('Gallery')
-                              ],
-                            ),
-                          ],
-                        )),
-                  ValueListenableBuilder(
-                    valueListenable: chatController.messageTextController,
-                    builder: (context, value, child) {
-                      final text = value.text;
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12.0, vertical: 10),
-                        child: TextFormField(
-                          controller: chatController.messageTextController,
-                          focusNode: chatController.focusNode,
-                          maxLines: 4,
-                          minLines: 1,
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              letterSpacing: 0.3),
-                          decoration: InputDecoration(
-                            prefixIcon: IconButton(
-                              padding: EdgeInsets.zero,
-                              icon: Icon(
-                                Iconsax.gallery,
-                                size: 20,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.grey[300]!, width: 0.5),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: kPrimary, width: 0.5),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                fillColor: kWhite,
+                                filled: true,
+                                isDense: true,
+                                hintText: "Type message...",
+                                border: InputBorder.none,
+                                hintStyle:
+                                    TextStyle(color: kGrey, fontSize: 14),
+                                suffixIcon: AnimatedSwitcher(
+                                  duration: const Duration(milliseconds: 300),
+                                  child: text.isEmpty
+                                      ? Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Obx(() {
+                                              return GestureDetector(
+                                                child: Icon(
+                                                  Icons.mic,
+                                                  size: 27,
+                                                  color: chatController
+                                                          .isVoiceRecording
+                                                          .value
+                                                      ? Colors.red
+                                                      : kPrimary,
+                                                ),
+                                                onLongPress: () async {
+                                                  print("Recording started");
+                                                },
+                                                onLongPressEnd: (details) {
+                                                  print("Recording stopped");
+                                                },
+                                              );
+                                            }),
+                                          ],
+                                        )
+                                      : IconButton(
+                                          icon: const Icon(
+                                            Icons.send_outlined,
+                                            size: 27,
+                                          ),
+                                          onPressed: () {
+                                            print("Message sent");
+                                          },
+                                        ),
+                                ),
                               ),
-                              onPressed: () {
-                                galleryToggle.value = !galleryToggle.value;
-                              },
                             ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey[300]!, width: 0.5),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: kPrimary, width: 0.5),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            fillColor: kWhite,
-                            filled: true,
-                            isDense: true,
-                            hintText: "Type message...",
-                            border: InputBorder.none,
-                            hintStyle: TextStyle(color: kGrey, fontSize: 14),
-                            suffixIcon: AnimatedSwitcher(
-                              duration: const Duration(milliseconds: 300),
-                              child: text.isEmpty
-                                  ? Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Obx(() {
-                                          return GestureDetector(
-                                            child: Icon(
-                                              Icons.mic,
-                                              size: 27,
-                                              color: chatController
-                                                      .isVoiceRecording.value
-                                                  ? Colors.red
-                                                  : kPrimary,
-                                            ),
-                                            onLongPress: () async {
-                                              print("Recording started");
-                                            },
-                                            onLongPressEnd: (details) {
-                                              print("Recording stopped");
-                                            },
-                                          );
-                                        }),
-                                      ],
-                                    )
-                                  : IconButton(
-                                      icon: const Icon(
-                                        Icons.send_outlined,
-                                        size: 27,
-                                      ),
-                                      onPressed: () {
-                                        print("Message sent");
-                                      },
+                          );
+                        },
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ],
+          ),
+          Positioned(
+            bottom: 70,
+            left: 0,
+            right: 0,
+            child: ValueListenableBuilder<bool>(
+              valueListenable: galleryToggle,
+              builder: (context, isGalleryOpen, child) {
+                return isGalleryOpen
+                    ? Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: mQ.width * 0.23),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: kWhite.withOpacity(0.9),
+                              borderRadius: BorderRadius.circular(14)),
+                          child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 1),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  TextButton.icon(
+                                    iconAlignment: IconAlignment.start,
+                                    icon: Icon(
+                                      Iconsax.camera,
+                                      size: 20,
                                     ),
-                            ),
-                          ),
+                                    onPressed: () {},
+                                    label: Text(
+                                      'Camera',
+                                      style: TextStyle(color: kBlackColor),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: mQ.width * 0.03,
+                                  ),
+                                  TextButton.icon(
+                                    iconAlignment: IconAlignment.start,
+                                    icon: Icon(
+                                      Iconsax.gallery,
+                                      size: 20,
+                                    ),
+                                    onPressed: () {},
+                                    label: Text(
+                                      'Gallery',
+                                      style: TextStyle(color: kBlackColor),
+                                    ),
+                                  ),
+                                ],
+                              )),
                         ),
-                      );
-                    },
-                  ),
-                ],
-              );
-            },
+                      )
+                    : SizedBox.shrink();
+              },
+            ),
           ),
         ],
       ),

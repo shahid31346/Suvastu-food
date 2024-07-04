@@ -6,14 +6,14 @@ import 'package:suvastufood/user_side/screen/dialogs/cancel_order_dialog.dart';
 import 'package:suvastufood/user_side/screen/dialogs/order_success_dialog.dart';
 import 'package:suvastufood/utils/const.dart';
 
-class ReviewOrdersScreen extends StatefulWidget {
-  const ReviewOrdersScreen({super.key});
+class OrdersDetailsScreen extends StatefulWidget {
+  const OrdersDetailsScreen({super.key});
 
   @override
-  State<ReviewOrdersScreen> createState() => _ReviewOrdersScreenState();
+  State<OrdersDetailsScreen> createState() => _OrdersDetailsScreenState();
 }
 
-class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
+class _OrdersDetailsScreenState extends State<OrdersDetailsScreen> {
   List<Map<String, dynamic>> items = [
     {'name': 'Special noodle', 'price': '\$000', 'quantity': '2'},
     {'name': 'Special noodle', 'price': '\$000', 'quantity': '2'},
@@ -29,7 +29,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
         backgroundColor: kBgColor,
         centerTitle: true,
         title: Text(
-          'Review Order'.tr,
+          'Order Details'.tr,
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
@@ -479,7 +479,7 @@ class _ReviewOrdersScreenState extends State<ReviewOrdersScreen> {
                   width: mQ.width * 0.85,
                   height: 50,
                   child: ResuableButton(
-                      text: "Confirm & Go".tr,
+                      text: "Cancel".tr,
                       onPressed: () {
                         showOrderSuccessDialog(context);
                       },

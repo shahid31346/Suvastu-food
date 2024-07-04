@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
+import 'package:suvastufood/user_side/screen/auth_screens/get_started_screen.dart';
 import 'package:suvastufood/utils/const.dart';
 
 class TermsAndConditionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final mQ = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: kBgColor,
       appBar: AppBar(
@@ -16,13 +19,25 @@ class TermsAndConditionsScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
       ),
-
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
-        child: Text(
-          '''Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum has been  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum has been  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ''',
-
-          style: TextStyle(fontSize: 14.0, color: kGrey),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+                child: Text(
+                  '''Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum has been  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum has been  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ''',
+                  style: TextStyle(color: kGrey, fontSize: 16),
+                ),
+              ),
+              SizedBox(
+                height: mQ.height * 0.04,
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -33,12 +48,14 @@ class TermsAndConditionsScreen extends StatelessWidget {
             children: [
               TextButton.icon(
                 onPressed: () {
-                  // Handle language selection
+                  changeLanguageBottomSheet(context);
                 },
                 label: Text('English', style: TextStyle(color: kDangerColor)),
-                  icon: Icon(Icons.keyboard_arrow_down, color: kDangerColor,),
+                icon: Icon(
+                  Icons.keyboard_arrow_down,
+                  color: kDangerColor,
+                ),
                 iconAlignment: IconAlignment.end,
-              
               ),
               Spacer(),
               TextButton.icon(
@@ -46,9 +63,11 @@ class TermsAndConditionsScreen extends StatelessWidget {
                   // Handle language selection
                 },
                 label: Text('Share', style: TextStyle(color: kDangerColor)),
-                icon: Icon(Icons.share, color: kDangerColor,),
+                icon: Icon(
+                  Icons.share,
+                  color: kDangerColor,
+                ),
                 iconAlignment: IconAlignment.end,
-
               ),
             ],
           ),

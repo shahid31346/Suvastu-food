@@ -1,20 +1,24 @@
 import 'dart:math' as math; // import this
 
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:suvastufood/user_side/screen/profile_screens/setting_screens/chat_screen/custom_shape.dart';
 
 class ReceivedMessageScreen extends StatelessWidget {
   final String message;
-  const ReceivedMessageScreen({
+  ReceivedMessageScreen({
     Key? key,
     required this.message,
   }) : super(key: key);
+  final appData = GetStorage();
 
   @override
   Widget build(BuildContext context) {
     final messageTextGroup = Flexible(
         child: Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: appData.read('language') == 'ur'
+          ? MainAxisAlignment.start
+          : MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Transform(
@@ -30,7 +34,12 @@ class ReceivedMessageScreen extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.grey[300],
               borderRadius: BorderRadius.only(
-                topRight: Radius.circular(18),
+                topLeft: appData.read('language') == 'ur'
+                    ? Radius.circular(18)
+                    : Radius.zero,
+                topRight: appData.read('language') == 'ur'
+                    ? Radius.zero
+                    : Radius.circular(18),
                 bottomLeft: Radius.circular(18),
                 bottomRight: Radius.circular(18),
               ),
@@ -45,7 +54,11 @@ class ReceivedMessageScreen extends StatelessWidget {
     ));
 
     return Padding(
-      padding: EdgeInsets.only(right: 50.0, left: 18, top: 5, bottom: 5),
+      padding: EdgeInsets.only(
+          right: appData.read('language') == 'ur' ? 16 : 50.0,
+          left: appData.read('language') == 'ur' ? 50 : 16.0,
+          top: 5,
+          bottom: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
